@@ -72,6 +72,14 @@
       "upstream_blob_sha1": "67da0b9762a64416e27ad930143eb8d53f2619e3",
       "sha256": "cf1f09305fcb23586b02c59709b3c4eda8967291573228cf67c8929055a73654",
       "reason": "Declare direct standard-library dependency on limits; do not rely on removed transitive includes."
+    },
+    {
+      "dependency": "flatbuffers",
+      "path": "include/flatbuffers/flatbuffers.h",
+      "commit": "bb223da2583dc2a9ec005bae6ade265197fb96f5",
+      "upstream_blob_sha1": "5ca38d8be7a0cef8f670a2cbaf08d1b28ab37f9c",
+      "sha256": "c0baeb135c8a3cc4164b4d4e33bd96283bcfe87d6466e4b1135af22c279ed015",
+      "reason": "Explicitly default TableKeyComparator copy constructor; preserve reference member and non-assignability, resolve AppleClang 17 deprecated implicit copy under -Werror."
     }
   ]
 }

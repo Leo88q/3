@@ -111,6 +111,10 @@ def main():
     print(f'Host C++ objects: {len(files)-len(failed)}/{len(files)}; '
           f'{sum(r["warnings"] for r in results)} warnings retained in {logs}')
     if failed:
+        for source in failed[:8]:
+            lines = (logs/(source.replace('/', '_')+'.log')).read_text().splitlines()
+            details = [line for line in lines if 'error:' in line]
+            print(source+':\n'+'\n'.join(details[:8]), flush=True)
         raise ValueError('Compilation failed: '+', '.join(failed))
     # Exercise the reflection data that World loads at runtime with the pinned verifier.
     verifier = CACHE/'schema-resource-test'
@@ -118,6 +122,11 @@ def main():
         '-I'+str(dep/'flatbuffers/include'), str(native.ROOT/'native/tests/schema_resource_test.cpp'),
         '-o', str(verifier)], check=True)
     subprocess.run([str(verifier), str(assets.OUTPUT/'flatbufferschemas/components.bfbs')], check=True)
+    comparator = CACHE/'flatbuffers-comparator-test'
+    subprocess.run([args.compiler, '-std=c++11', '-Wall', '-Wextra', '-Werror',
+        '-I'+str(dep/'flatbuffers/include'), str(native.ROOT/'native/tests/flatbuffers_comparator_test.cpp'),
+        '-o', str(comparator)], check=True)
+    subprocess.run([str(comparator)], check=True)
     print('Host checks passed. No Android binary or runtime claim.')
 
 

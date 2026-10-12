@@ -11,11 +11,11 @@ jobs:
     timeout-minutes: 20
     defaults:
       run:
-        working-directory: ' Noriwake'
+        working-directory: 'mac/ Noriwake'
     steps:
       - uses: actions/checkout@v4
         with:
-          path: ' Noriwake'
+          path: 'mac/ Noriwake'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -39,5 +39,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: macos-native-diagnostics
-          path: "${{ github.workspace }}/ Noriwake/.cache/native-cpp-check/"
+          path: "${{ github.workspace }}/mac/ Noriwake/.cache/native-cpp-check/"
           if-no-files-found: ignore

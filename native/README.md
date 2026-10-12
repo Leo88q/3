@@ -146,4 +146,8 @@ notice. Это **не NDK-компиляция, не линковка движк
 Python/flatc/C++ работают в ARM64; оригинальные 64-bit Intel FBX-конвертеры
 работают через Rosetta. Не передаём ARM-компилятору `-msse4.1` и не используем
 Linux GL header на Mac. Инструкция и границы: [MAC_NATIVE.md](../docs/MAC_NATIVE.md).
-**Готового macOS-приложения и проверенного игрового окна пока нет.**
+Отдельный `build_macos_game.py` теперь собирает и линкует настоящий desktop
+executable; [ARM64 CI](https://github.com/Leo88q/3/actions/runs/38268931096)
+подтвердил инициализацию игры, окно/OpenGL, 5 секунд игрового цикла и штатный
+выход без ошибок behavior graphs. Это development binary с Homebrew dylib,
+не переносимый `.app` и не полное gameplay QA. Команды запуска — в инструкции выше.

@@ -80,7 +80,7 @@ pindrop. `BENCHMARK_MOTIVE` не включён: активный NDK-профи
 по-прежнему не установлен. Конфигурация r28c/SDK35 — целевая, не подтверждённая
 компиляцией. Нужны настоящий NDK compile/link всех библиотек, APK/DEX/package,
 16 KiB page compatibility, merged manifest audit и тест на Seeker.
-Удалённый CI-рецепт дополнен host-C++ шагом, но его remote run не выполнялся.
+Host-C++ шаг позднее успешно выполнен в Linux и macOS CI (см. дополнение ниже).
 Новые механики Noriwake, MWA/cNFT и финальный licensing/release audit этим
 техническим этапом не закрываются.
 
@@ -90,6 +90,19 @@ pindrop. `BENCHMARK_MOTIVE` не включён: активный NDK-профи
 `check_native_cpp.py` теперь выбирает AppleClang на Mac, Apple SDK OpenGL headers
 и убирает SSE-флаги на arm64. Все 53 игровых translation units и два
 FlatBuffers-теста прошли [настоящий ARM64 Mac CI](https://github.com/Leo88q/3/actions/runs/38263311536).
-Результат по-прежнему object-only, не связанный исполняемый файл.
+Именно этот helper остаётся object-only; отдельный desktop build описан ниже.
 Добавлен тест копирования/сортировки TableKeyComparator и минимальная
 upstream-поправка для AppleClang 17. Инструкция: [MAC_NATIVE.md](MAC_NATIVE.md).
+
+
+## Полная desktop-сборка и запуск
+
+`native/macos/` + `tools/build_macos_game.py` добавляют явный Mac-only
+compile/link профиль: 311 оригинальных C++ translation units и desktop main.
+Используются pinned engine sources и системные SDL2/audio/font/WebP библиотеки
+Homebrew; Android pins этим не заменяются.
+[CI 38268931096](https://github.com/Leo88q/3/actions/runs/38268931096) на
+Darwin ARM64/macOS 15.7.9 успешно собрал executable и выполнил настоящий
+startup/context/5-second loop/SDL_QUIT test с exit 0, без ошибок behavior graphs.
+Это не подтверждение всех механик, пользовательского macOS 26.6.1 или Android.
+Команды сборки/запуска и ограничения: [MAC_NATIVE.md](MAC_NATIVE.md).

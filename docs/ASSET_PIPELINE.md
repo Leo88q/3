@@ -95,7 +95,7 @@ FlatBuffers хранятся как проверяемые overlays с исхо�
 и не нужен touch-профилю. Два вложенных gitlink Gumbo (тестовые данные и gtest)
 не загружены. Полный C++/NDK linkage, Gradle, APK, Android lifecycle,
 производительность, MWA/cNFT и новая сюжетная часть здесь не проверялись.
-CI-рецепт добавлен, но удалённый запуск CI в этой сессии не выполнялся.
+Позднее удалённый Linux/macOS CI прошёл подготовку ресурсов; см. дополнение о Mac ниже.
 
 
 ### Исправление следующей итерации
@@ -119,3 +119,9 @@ Darwin FBX tools. На Apple Silicon требуется Rosetta **только �
 Генерация ресурсов и игровых ARM64 objects прошла реальный macOS CI.
 См. [MAC_NATIVE.md](MAC_NATIVE.md). Проверка `check_native_webp.py` пока остаётся
 Linux host-рецептом; на Mac в asset recipe проверяется декодирование Pillow.
+
+Отдельная desktop-сборка также уже прошла компиляцию, линковку и короткий
+настоящий запуск в [Mac ARM64 CI](https://github.com/Leo88q/3/actions/runs/38268931096).
+Исправлены missing SoundHandle inputs в body-hit nodes пяти animal graphs;
+новый smoke-test отвергает graph validation errors даже при exit 0.
+Сам asset recipe по-прежнему не является сборкой приложения.

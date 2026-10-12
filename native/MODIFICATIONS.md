@@ -148,3 +148,28 @@ copyright-заголовки внутри файлов не удалены. Ис
 
 Успешные реальные CI: macOS 38263311536, Linux/Java 38263311638.
 Пользовательский macOS 26.6.1, игровое окно и `.app` пока не проверены.
+
+
+## 2026-10-12 — native desktop executable и проверенный startup
+
+- Добавлен отдельный macOS CMake-профиль и driver: 311 оригинальных единиц
+  трансляции + собственный entrypoint. Подготовка схем и assets проверяется
+  до сборки; report содержит архитектуру, dylib и версии системных библиотек.
+- Системные SDL2/SDL2_mixer, FreeType/Harfbuzz/libunibreak/Gumbo/WebP — только
+  macOS development profile. Это не изменение pinned Android dependencies
+  и не разрешение распространять бинарник без packaging/license audit.
+- `game.cpp`/`game.h`: atomic exit flag; остановка/пробуждение/join update worker,
+  отдельный stop flag и join desktop vsync; atomic global condition pointer;
+  очистка callbacks вместо добавления null callback. Render wakeups остаются
+  активными до завершения main loop, чтобы не создать shutdown deadlock.
+- `bird/croc/giraffe/hippo/mandrill.json`: body-hit `audio.play_sound` node 5
+  теперь получает существующий `hit_char` SoundHandle на input 1; позиция и gain
+  сохранены. Отсутствующий вход делал весь graph невалидным. Hashes и причины
+  записаны в modifications.json, оригинальная графика не заменялась.
+- Smoke-test: реальная Game initialization, SDL window/OpenGL context, 5 секунд
+  Game.Run, SDL_QUIT, timeout 60 секунд, exit 0 и отсутствие graph errors.
+  Исправления проверены [CI 38268931096](https://github.com/Leo88q/3/actions/runs/38268931096)
+  на macOS 15.7.9 ARM64; 45 Python-тестов и native C++ policy tests прошли локально.
+
+Это уточняет прежнюю запись о непроверенном окне: теперь startup проверен,
+но не полный gameplay, macOS 26.6.1 пользователя, переносимый `.app` или APK.

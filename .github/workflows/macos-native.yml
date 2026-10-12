@@ -1,4 +1,4 @@
-name: macOS native preparation (not a playable app)
+name: macOS native build and startup smoke test
 on:
   push:
     branches: ['arena/b5da0349-3']

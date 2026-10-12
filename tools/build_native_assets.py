@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright 2026 Noriwake contributors. SPDX-License-Identifier: Apache-2.0
-"""Build real upstream game assets on Linux x86_64; never an APK build."""
+"""Build real upstream game assets on Linux/macOS; never an app/APK build."""
 import argparse
 from collections import Counter
 import hashlib
@@ -17,6 +17,7 @@ import tempfile
 
 import native
 import engine_overrides
+import native_host
 
 ROOT = native.ROOT
 GAME = native.GAME
@@ -61,7 +62,7 @@ def verify_inputs(fetch=False, dependencies=REQUIRED):
     # Track implementation and reviewed source identities; machine paths excluded.
     inputs = ['native/upstream.lock.json', 'native/modifications.json',
               'native/dependency-overrides.json', 'native/dependency-mirrors.json',
-              'tools/build_native_assets.py', 'tools/requirements-native-assets.txt']
+              'tools/build_native_assets.py', 'tools/native_host.py', 'tools/requirements-native-assets.txt']
     return {name: sha(ROOT/name) for name in inputs}
 
 
@@ -100,8 +101,8 @@ def run(command):
 
 
 def build(args, inputs):
-    if platform.system() != 'Linux' or platform.machine() not in ('x86_64', 'AMD64'):
-        raise ValueError('This host recipe requires Linux x86_64 for pinned FBX tools; use Linux/WSL2.')
+    system, machine = native_host.host()
+    pipelines = native_host.converters(DEPS, system, machine)
     import PIL
     import PIL.Image
     from PIL import features
@@ -131,8 +132,8 @@ def build(args, inputs):
         argv = sys.argv
         try:
             sys.argv = [str(GAME/'scripts/build_assets.py'), '--flatc', str(flatc),
-                        '--mesh-pipeline', str(DEPS/'fplbase/bin/Linux/mesh_pipeline'),
-                        '--anim-pipeline', str(DEPS/'motive/bin/Linux/anim_pipeline'),
+                        '--mesh-pipeline', str(pipelines['mesh']),
+                        '--anim-pipeline', str(pipelines['anim']),
                         '--cwebp', '', '--output', str(stage), '--target', 'all']
             if recipe.main() != 0:
                 raise ValueError('Original asset conversion failed')
@@ -193,7 +194,8 @@ def build(args, inputs):
         outputs = output_inventory(stage)
         report = {'schema': 1, 'inputs': inputs, 'outputs': outputs,
                   'counts': dict(sorted(Counter(Path(p).suffix for p in outputs).items())),
-                  'tools': {'pillow': PIL.__version__, 'libwebp_encoder': features.version('webp')},
+                  'tools': {'pillow': PIL.__version__, 'libwebp_encoder': features.version('webp'),
+                            'host': system, 'architecture': machine, 'fbx_architecture': 'x86_64'},
                   'scope': 'Host resource conversion only; not APK, runtime or release approval.'}
         (stage/MANIFEST).write_text(json.dumps(report, indent=2)+'\n')
         # Publish only after every conversion succeeds. Preserve previous output on failure.
@@ -222,12 +224,14 @@ def main():
     if args.fetch and args.check:
         parser.error('--check cannot download/modify dependencies')
     try:
+        if not args.check:
+            native_host.require_translation(*native_host.host())
         inputs = verify_inputs(args.fetch)
         if args.check:
             check_output(inputs)
         else:
             build(args, inputs)
-    except (OSError, ValueError, KeyError, ImportError, subprocess.CalledProcessError) as exc:
+    except (OSError, ValueError, KeyError, ImportError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
         print('ASSET BUILD FAILED:', exc, file=sys.stderr)
         return 1
     return 0

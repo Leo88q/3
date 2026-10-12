@@ -1,0 +1,43 @@
+name: macOS native preparation (not a playable app)
+on:
+  push:
+    branches: ['arena/b5da0349-3']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos-arm64:
+    runs-on: macos-15
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ' Noriwake'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: ' Noriwake'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Report platform and require existing Rosetta when needed
+        run: |
+          uname -m
+          sw_vers
+          python3 -c 'import sys; sys.path.insert(0,"tools"); import native_host; native_host.require_translation(*native_host.host())'
+      - name: Install host build tools
+        run: python3 -m pip install cmake==3.31.6 ninja==1.11.1.4 -r tools/requirements-native-assets.txt
+      - name: Generate real resources with original macOS FBX tools
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/build_native_assets.py --fetch
+      - name: Compile actual game translation units for this Mac architecture
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/check_native_cpp.py --fetch
+      - name: Preserve diagnostics (not an app)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-native-diagnostics
+          path: "${{ github.workspace }}/ Noriwake/.cache/native-cpp-check/"
+          if-no-files-found: ignore

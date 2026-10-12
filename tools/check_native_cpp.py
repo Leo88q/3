@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Copyright 2026 Noriwake contributors. SPDX-License-Identifier: Apache-2.0
-"""Compile actual game translation units on Linux x86_64. NOT NDK, linkage or APK."""
+"""Compile actual game translation units on Linux/macOS. NOT NDK, linkage or APK."""
 import argparse
 import concurrent.futures
 import json
@@ -13,6 +13,7 @@ import sys
 
 import native
 import build_native_assets as assets
+import native_host
 
 DEPENDENCIES = tuple(sorted(set(assets.REQUIRED) | {
     'bulletphysics', 'fplutil', 'freetype', 'harfbuzz', 'libunibreak',
@@ -50,16 +51,16 @@ def gl_header(fetch):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fetch', action='store_true')
-    parser.add_argument('--compiler', default=os.environ.get('CXX', 'g++'))
+    parser.add_argument('--compiler', default=os.environ.get('CXX', 'clang++' if platform.system() == 'Darwin' else 'g++'))
     parser.add_argument('--jobs', type=int, default=2)
     args = parser.parse_args()
     if args.jobs < 1 or args.jobs > 16:
         parser.error('--jobs must be 1..16')
-    if platform.system() != 'Linux' or platform.machine() != 'x86_64':
-        raise ValueError('This check targets Linux x86_64 host objects only')
+    system, machine = native_host.host()
     inputs = assets.verify_inputs(fetch=args.fetch, dependencies=DEPENDENCIES)
     assets.check_output(inputs)
-    gl_header(args.fetch)
+    if system == 'Linux':
+        gl_header(args.fetch)
     generated = CACHE/'generated'
     generated.mkdir(parents=True, exist_ok=True)
     logs = CACHE/'logs'; logs.mkdir(exist_ok=True)
@@ -81,7 +82,7 @@ def main():
         dep/'harfbuzz/src', dep/'fplutil/libfplutil/include',
         dep/'breadboard/module_library/include', dep/'corgi/component_library/include']
     include += [dep/name/'include' for name in DEPENDENCIES if (dep/name/'include').is_dir()]
-    flags = ['-std=c++11', '-O0', '-g0', '-fPIC', '-msse4.1', '-Wall', '-Wextra',
+    flags = ['-std=c++11', '-O0', '-g0', '-fPIC', *native_host.cpp_flags(system, machine), '-Wall', '-Wextra',
         '-DFPLBASE_ANDROID_VR=0', '-DFPLBASE_OPENGL', '-DDEBUG=1',
         '-DBREADBOARD_MODULE_LIBRARY_BUILD_MATHFU',
         '-DBREADBOARD_MODULE_LIBRARY_BUILD_CORGI_COMPONENT_LIBRARY',
@@ -99,9 +100,11 @@ def main():
     files = source_files()
     with concurrent.futures.ThreadPoolExecutor(args.jobs) as pool:
         results = list(pool.map(compile_one, files))
-    report = {'scope': 'Linux host game objects ONLY; no engine-library compilation, linking, JNI, NDK or APK',
+    report = {'scope': 'Host game objects ONLY; no engine-library compilation, linking, JNI, NDK or APK',
+              'host': system, 'architecture': machine,
               'compiler': subprocess.check_output([args.compiler, '--version'], text=True).splitlines()[0],
-              'host_gl': {'repository': GL_REPOSITORY, 'git_blob': GL_BLOB, 'license': 'MIT (header)'},
+              'host_gl': ({'repository': GL_REPOSITORY, 'git_blob': GL_BLOB, 'license': 'MIT (header)'}
+                          if system == 'Linux' else {'source': 'Apple SDK OpenGL headers'}),
               'flags': flags, 'schemas': len(schemas), 'results': results}
     (CACHE/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
     failed = [r['source'] for r in results if r['exit_code']]

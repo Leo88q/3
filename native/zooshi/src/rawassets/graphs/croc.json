@@ -1,3 +1,4 @@
+// Noriwake modification (2026-10-12): restore missing body-hit SoundHandle input; keep position and gain in their declared slots.
 // When a collision with the entity's body occurs, play a sound effect.  When a
 // collision with the entity's mouth occurs, increment the player's score and
 // play a sound effect.
@@ -80,6 +81,12 @@
           "edge": {
             "node_index": 4,
             "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_SoundHandle",
+          "edge": {
+            "value": "hit_char"
           }
         },
         {

@@ -193,5 +193,30 @@
     "date": "2026-10-12",
     "reason": "Python 3 asset entrypoint, no distutils import; use reviewed Scene Lab pipeline override.",
     "sha256": "4773b20628b8580fc0c1e037212f6f25c91839431764e8645c25c320e6be0a50"
+  },
+  "src/rawassets/graphs/bird.json": {
+    "date": "2026-10-12",
+    "reason": "Restore missing hit_char SoundHandle at audio.play_sound input 1; actual Mac startup rejected these complete animal behavior graphs (3 inputs vs pinned 4-input signature).",
+    "sha256": "4e8b7962eb36a60b3883eb3b21e3e3235dbd8749e9fbac75ae8ea8886065da73"
+  },
+  "src/rawassets/graphs/croc.json": {
+    "date": "2026-10-12",
+    "reason": "Restore missing hit_char SoundHandle at audio.play_sound input 1; actual Mac startup rejected these complete animal behavior graphs (3 inputs vs pinned 4-input signature).",
+    "sha256": "9034cfed85fb88fb64ecb083b666f5feec0ecfb1c7b9373975658640521a53e1"
+  },
+  "src/rawassets/graphs/giraffe.json": {
+    "date": "2026-10-12",
+    "reason": "Restore missing hit_char SoundHandle at audio.play_sound input 1; actual Mac startup rejected these complete animal behavior graphs (3 inputs vs pinned 4-input signature).",
+    "sha256": "3ecdb427b440fc91b3f498cb572361766e3700d23505392e84c8415830c020eb"
+  },
+  "src/rawassets/graphs/hippo.json": {
+    "date": "2026-10-12",
+    "reason": "Restore missing hit_char SoundHandle at audio.play_sound input 1; actual Mac startup rejected these complete animal behavior graphs (3 inputs vs pinned 4-input signature).",
+    "sha256": "f930f9691373bacc03a19ccd61394f1f8d6c720489c34bf075626d1ab2d8b112"
+  },
+  "src/rawassets/graphs/mandrill.json": {
+    "date": "2026-10-12",
+    "reason": "Restore missing hit_char SoundHandle at audio.play_sound input 1; actual Mac startup rejected these complete animal behavior graphs (3 inputs vs pinned 4-input signature).",
+    "sha256": "a523067eacadfcf0a11da6488693f75d77dc5a383dea50564b491514f22ab99a"
   }
 }

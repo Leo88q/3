@@ -1,5 +1,6 @@
 # Copyright 2026 Noriwake contributors. SPDX-License-Identifier: Apache-2.0
 import json
+import re
 from pathlib import Path
 import sys
 import unittest
@@ -7,6 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'tools'))
 import check_native_cpp as cpp
+import build_macos_game as mac
 
 
 class MacDesktopBuildTests(unittest.TestCase):
@@ -56,3 +58,23 @@ class MacDesktopBuildTests(unittest.TestCase):
         self.assertIn('input_.app_event_callbacks().clear()', code)
         self.assertNotIn('input_.AddAppEventCallback(nullptr)', code)
         self.assertIn('if (rt_data->game_exiting->load()) break', code)
+
+    def test_smoke_rejects_broken_behavior_graphs_even_on_exit_zero(self):
+        good = 'SMOKE: initialized real game and OpenGL context\nSMOKE PASSED: done'
+        self.assertTrue(mac.smoke_succeeded(good, 0))
+        self.assertFalse(mac.smoke_succeeded(good + '\nError in graph "hippo": 3 edges, expected 4', 0))
+        self.assertFalse(mac.smoke_succeeded(good, -11))
+        self.assertFalse(mac.smoke_succeeded('SMOKE PASSED:', 0))
+
+    def test_body_hit_audio_keeps_four_typed_inputs(self):
+        for animal in ['bird', 'croc', 'giraffe', 'hippo', 'mandrill']:
+            text = (ROOT/f'native/zooshi/src/rawassets/graphs/{animal}.json').read_text()
+            graph = json.loads(re.sub(r'//[^\n]*', '', text))
+            node = graph['node_list'][5]
+            self.assertEqual((node['module'], node['name']), ('audio', 'play_sound'))
+            edges = node['input_edge_list']
+            self.assertEqual(len(edges), 4)
+            self.assertEqual(edges[1]['edge_type'], 'breadboard_module_library_SoundHandle')
+            self.assertEqual(edges[1]['edge']['value'], 'hit_char')
+            self.assertEqual(edges[2]['edge'], {'node_index': 2, 'edge_index': 1})
+            self.assertEqual(edges[3]['edge']['value'], 1.0)

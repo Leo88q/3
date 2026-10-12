@@ -42,6 +42,12 @@ def run(command):
     subprocess.run([str(x) for x in command], cwd=native.ROOT, check=True)
 
 
+def smoke_succeeded(log, exit_code):
+    return (exit_code == 0 and 'SMOKE PASSED:' in log
+            and 'SMOKE: initialized real game and OpenGL context' in log
+            and 'Error in graph' not in log)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fetch', action='store_true', help='Prepare missing pinned C++ dependency sources')
@@ -130,10 +136,12 @@ def main():
             log += (exc.stderr or b'').decode(errors='replace') if isinstance(exc.stderr, bytes) else (exc.stderr or '')
             report['smoke_exit_code'] = 'timeout'
         (CACHE/'smoke.log').write_text(log)
-        report['runtime_tested'] = (report['smoke_exit_code'] == 0 and 'SMOKE PASSED:' in log)
+        report['runtime_tested'] = smoke_succeeded(log, report['smoke_exit_code'])
         report['runtime_scope'] = 'Game initialization, real window/OpenGL context and timed loop exit ONLY'
         report_path.write_text(json.dumps(report, indent=2)+'\n')
         print(log, flush=True)
+        print('SMOKE SUMMARY:', json.dumps({'exit': report['smoke_exit_code'],
+            'passed': report['runtime_tested'], 'scope': report['runtime_scope']}), flush=True)
         if not report['runtime_tested']:
             raise ValueError('Game startup smoke test failed; see .cache/macos-game/smoke.log')
     if args.run:

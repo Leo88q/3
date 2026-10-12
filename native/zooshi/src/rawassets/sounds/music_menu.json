@@ -1,0 +1,17 @@
+{
+  "name": "music_menu",
+  "bus": "gameplay_music",
+  "stream": false,
+  "loop": true,
+  "gain": 1.0,
+
+  "audio_sample_set": [
+    {
+      "playback_probability": 1.0,
+      "audio_sample": {
+        "filename": "sounds/Zooshi_Main_Theme_V2.ogg"
+      }
+    }
+  ]
+}
+

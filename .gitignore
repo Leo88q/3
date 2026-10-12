@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+android/.gradle/
+android/local.properties
+android/**/build/
+.DS_Store
+
+playwright-report/
+test-results/
+
+.cache/
+
+# Python preparation/test caches
+__pycache__/
+*.py[cod]

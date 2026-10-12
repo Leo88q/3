@@ -1,0 +1,74 @@
+name: Native source and policy checks (not APK)
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  source-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify tracked upstream provenance
+        run: python3 tools/native.py verify
+      - name: Install host image test dependency
+        run: python3 -m pip install -r tools/requirements-native-assets.txt
+      - name: Test preparation safety and licensing invariants
+        run: python3 -m unittest discover -s native/tests -p 'test_*.py' -v
+      - name: Compile and test native session and offline providers with UBSan
+        run: python3 tools/test_native.py
+      - name: Check standalone CMake/CTest build (not APK)
+        run: |
+          cmake -S native/tests -B .cache/native-policy-build -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .cache/native-policy-build --parallel 2
+          ctest --test-dir .cache/native-policy-build --output-on-failure
+  java-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Prepare pinned FPLBase and reviewed no-VR overrides
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/native.py deps --only fplbase
+          python3 tools/native.py patches --only fplbase
+      - name: Compile actual Android Java sources without VR SDK (not APK)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/check_android_java.py --fetch
+
+  host-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned host-only tools
+        run: python3 -m pip install cmake==3.31.6 ninja==1.11.1.4 -r tools/requirements-native-assets.txt
+      - name: Convert original assets and hyphenation data (not APK)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/build_native_assets.py --fetch
+      - name: Verify complete asset manifest
+        run: python3 tools/build_native_assets.py --check
+      - name: Decode textures with pinned engine WebP (not Android GPU)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/native.py deps --only webp
+          python3 tools/check_native_webp.py
+      - name: Compile real game C++ objects and verify entity schema (host only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/check_native_cpp.py --fetch

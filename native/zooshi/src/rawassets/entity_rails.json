@@ -1,0 +1,309 @@
+{
+  "entity_list": [
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$a289-193e-8e4e-7995",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "rail_name": "bird_loop",
+            "total_time": 4000,
+            "reliable_distance": 1
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$187e-7627-ec9b-4d6d",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 1,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$56dd-299b-a15e-c25a",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 2,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.5,
+              "y": 1,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$239b-780a-8257-e783",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 3,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 1,
+              "y": 0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$769e-4be2-04d1-d0d1",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 4,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 1,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$0b58-a721-472b-5111",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 5,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 1,
+              "y": -0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$2c46-1c0e-5db3-a033",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 6,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.5,
+              "y": -1,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$47c3-2de7-2e94-ad9c",
+            "prototype": "RailNode"
+          }
+        },
+        {
+          "data_type": "RailNodeDef",
+          "data": {
+            "ordering": 7,
+            "rail_name": "bird_loop"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": -0.5,
+              "z": 0
+            },
+            "scale": {
+              "x": 20,
+              "y": 20,
+              "z": 20
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "dependency": "fplbase",
+      "commit": "8f95f31f1d8d58e57e945d781df9dd8b6fdbec31",
+      "path": "src_java/com/google/fpl/fplbase/FPLActivity.java",
+      "upstream_blob_sha1": "912b4a5bb5a1b250211f1550c028669750eedac1",
+      "sha256": "1b92e1d6c8369094b9a1a55a279b0e81b369713f5ef1caea3ca7ed97240fb44e",
+      "reason": "Remove VR/NFC classes and callbacks; preserve SDL, audio, touch/gamepad, dialogs and vsync. Fix immutable relaunch PendingIntent for API 23+."
+    },
+    {
+      "dependency": "fplbase",
+      "commit": "8f95f31f1d8d58e57e945d781df9dd8b6fdbec31",
+      "path": "jni/Android.mk",
+      "upstream_blob_sha1": "4551db38810fd1d94eb95bf3e155ec3f8b3737be",
+      "sha256": "2afb3cf4cb6a0a17e5a3dc435829c8d80aa3b6ef284b373f34b8d871c7fc7295",
+      "reason": "Build/export VR=0 consistently; omit HMD renderer and removed NDK helpers; link platform GLES3 for API 23+."
+    },
+    {
+      "dependency": "fplbase",
+      "commit": "8f95f31f1d8d58e57e945d781df9dd8b6fdbec31",
+      "path": "jni/sdl/Android.mk",
+      "upstream_blob_sha1": "d7f858b124a5a6045c1cee178efdbdcc7e131cc3",
+      "sha256": "20805b29eec095eaf40c78b40d649279a7b491206dfeed1c887654f463f024eb",
+      "reason": "Remove forced 32-bit ARM source suffix/mode for arm64 and x86_64; retain upstream SDL JNI/static-link behavior."
+    },
+    {
+      "dependency": "flatbuffers",
+      "commit": "bb223da2583dc2a9ec005bae6ade265197fb96f5",
+      "path": "src/idl_parser.cpp",
+      "upstream_blob_sha1": "7adfcca24319310ea9625dbeeb05481edd8b3eb9",
+      "sha256": "5fbdb3cee8326cd398acd9809058bf34717071670674773401a80d10e931df31",
+      "reason": "Remove ineffective const on scalar casts rejected by current GCC -Werror; parsing and wire format unchanged."
+    },
+    {
+      "dependency": "flatbuffers",
+      "commit": "bb223da2583dc2a9ec005bae6ade265197fb96f5",
+      "path": "src/reflection.cpp",
+      "upstream_blob_sha1": "cb30c7ff7a559d1c1f0ae23886effc31bbc5e4d4",
+      "sha256": "3bd834c4e2238eb1bd0a33cd366eebf7a6d1b8e992512eb630e542f8f3bd6498",
+      "reason": "Annotate existing intended fallthrough after block braces for current GCC; no change to reflection behavior."
+    },
+    {
+      "dependency": "scene_lab",
+      "commit": "5e8d3581346e358b5da03e8073ea09091401365c",
+      "path": "scripts/scene_lab_asset_builder.py",
+      "upstream_blob_sha1": "eff866fed2e55f27bf489e0516cfefd48fff79ea",
+      "sha256": "e48a17c9f0c16568a9d94e0170409ea0a42ab566b55ffc9311434b22f60f3770",
+      "reason": "Port distutils/iteritems to Python 3, deterministic overlays, working Pillow resize/WebP fallback, integer texture limits and imported-schema invalidation; original assets retained."
+    },
+    {
+      "dependency": "flatbuffers",
+      "path": "src/idl_gen_general.cpp",
+      "commit": "bb223da2583dc2a9ec005bae6ade265197fb96f5",
+      "upstream_blob_sha1": "857bf46c871284f64beade33fc03f4d106fbaa3b",
+      "sha256": "57f64175c229fe3ff3191163dafe8a303d2c68c1c9f76605d72b7f62f81b13fe",
+      "reason": "Recognized comments for existing intentional switch fallthrough; no generator semantics change."
+    },
+    {
+      "dependency": "motive",
+      "path": "include/motive/common.h",
+      "commit": "e312290704bc6922c823770578ab8b9dddd05975",
+      "upstream_blob_sha1": "4c36c877982360796164c220721d8cc2733d029f",
+      "sha256": "b3dbb32c7cb13f2d170c1fd75654ef1f9c5b980a1a9ef4c1d37404422f722a4a",
+      "reason": "Declare direct standard-library dependency on limits; do not rely on removed transitive includes."
+    },
+    {
+      "dependency": "flatui",
+      "path": "include/flatui/internal/distance_computer.h",
+      "commit": "e529e9f25a94c1ac9a1893d4c7f1fe056ecac057",
+      "upstream_blob_sha1": "67da0b9762a64416e27ad930143eb8d53f2619e3",
+      "sha256": "cf1f09305fcb23586b02c59709b3c4eda8967291573228cf67c8929055a73654",
+      "reason": "Declare direct standard-library dependency on limits; do not rely on removed transitive includes."
+    }
+  ]
+}

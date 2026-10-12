@@ -1,0 +1,4264 @@
+{
+  "repository": "https://github.com/google/zooshi",
+  "commit": "05390b98f79eed8ef26ec4ab2c3aea3790b1165c",
+  "archive_sha256": "41ae63d2d74fb7327fe4e914aa4250f018639391c295132905e18ba3dedd4616",
+  "files": [
+    {
+      "path": ".gitignore",
+      "git_blob_sha1": "f41b9050927bc8b4a7466f6834c090663e718e80",
+      "size": 1322,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitmodules",
+      "git_blob_sha1": "28497e663892f91adbcb81977426482495d3da2a",
+      "size": 2870,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "AndroidManifest.xml",
+      "git_blob_sha1": "bfcfd72ca845190f0a9bd272c342be5533504e6f",
+      "size": 5972,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "git_blob_sha1": "65ff77f348a8521caa2cc9b2536571176ee3ade2",
+      "size": 13351,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "CONTRIBUTING",
+      "git_blob_sha1": "aebd88574561a8b92f959c6be76695b5f3a07d86",
+      "size": 1435,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/about.txt",
+      "git_blob_sha1": "dc435ee87452ef7e4aff6e85aa9fec80adbdde65",
+      "size": 214,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/licenses.txt",
+      "git_blob_sha1": "92a580aa3788880fae6406727caa371da6a5c82a",
+      "size": 9886,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/color.glslf",
+      "git_blob_sha1": "568d473d77a485484a7aa3c3b9a307023badb91c",
+      "size": 675,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/color.glslv",
+      "git_blob_sha1": "d59e5a694d686359ce415bbe7d2ee2f937bd4978",
+      "size": 739,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/include/fog_effect.glslf_h",
+      "git_blob_sha1": "90eed339f5e87af35cf698e477aa50f54f8f9505",
+      "size": 1699,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/include/shadow_map.glslf_h",
+      "git_blob_sha1": "281f75ae37f537d626094962f07ec0b0d52ee88d",
+      "size": 4518,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/include/water.glslf_h",
+      "git_blob_sha1": "af9c6f1c83493fdc3ce1013b24a4640e865ab6e8",
+      "size": 1416,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/render_depth.glslf",
+      "git_blob_sha1": "d89713cbd477a540a79a5baf09ae708e7409b1af",
+      "size": 1766,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/render_depth.glslv",
+      "git_blob_sha1": "2deeb12823d68a7bc2661135d280fc86f54d2536",
+      "size": 1001,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/render_depth_skinned.glslf",
+      "git_blob_sha1": "bb43df1a0b7c90a4cd6452387c378615b7a3da62",
+      "size": 1765,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/render_depth_skinned.glslv",
+      "git_blob_sha1": "61d95c946033d2e440128629af6649caab215a0c",
+      "size": 1151,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/textured.glslf",
+      "git_blob_sha1": "467350d37ae5798420ed47ddce9e0d42d3e793ff",
+      "size": 675,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/textured.glslv",
+      "git_blob_sha1": "2df094487387779a71c5eeb763535879af8cf119",
+      "size": 675,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/textured_lit_cutout.glslf",
+      "git_blob_sha1": "9d5660a6d222660ce8459e54a17adc8d53c99ed0",
+      "size": 984,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/textured_lit_cutout.glslv",
+      "git_blob_sha1": "006fefab3c7f0a49ac8428df6bf8bed521711cf8",
+      "size": 1360,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/uber_shader.glslf",
+      "git_blob_sha1": "647004841f9de5f650c829f602eca75823634907",
+      "size": 4056,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/shaders/uber_shader.glslv",
+      "git_blob_sha1": "3f91f76392028d2fb94a3741853512808e1ee30a",
+      "size": 3039,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_Game_Over.ogg",
+      "git_blob_sha1": "a54ccad3fc70b963ac67b49d8228de6440a87313",
+      "size": 93011,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_Gameplay_Loop_Lap1.ogg",
+      "git_blob_sha1": "f08741aa29541987d651306aa10e71e360c9af4b",
+      "size": 879522,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_Gameplay_Loop_Lap2.ogg",
+      "git_blob_sha1": "54e8ee61cf12cc588292f519a88caa722d8c8f2b",
+      "size": 923324,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_Gameplay_Loop_Lap3.ogg",
+      "git_blob_sha1": "627a093163d8e7a0b75b024dfc5700d8554162f5",
+      "size": 930593,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_Main_Theme_V2.ogg",
+      "git_blob_sha1": "0ce372b67d74c08200a5df936447523a074c7258",
+      "size": 851543,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/Zooshi_New_Hi_Score.ogg",
+      "git_blob_sha1": "a9dd796b4f026c22f5710d05916a3fedb15bba32",
+      "size": 102686,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_01.ogg",
+      "git_blob_sha1": "b9d5a27adb10c7c550290112670ae45e0a418f31",
+      "size": 11508,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_02.ogg",
+      "git_blob_sha1": "b3fb3e19ad02e0a5cdb7047dc464fc54da36f17e",
+      "size": 12380,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_03.ogg",
+      "git_blob_sha1": "8748e59754ebe626a592df406962273b8c2e7be6",
+      "size": 10700,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_04.ogg",
+      "git_blob_sha1": "0b8e3cb52de3100038f3fcec3174cf85eacf1e4d",
+      "size": 10439,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_05.ogg",
+      "git_blob_sha1": "e66db89e32016f918f959fdc6d5a355383f76cde",
+      "size": 9414,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_06.ogg",
+      "git_blob_sha1": "e3e7ec9ce1d5d6d781237582ee67b87eb46196a8",
+      "size": 9971,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_07.ogg",
+      "git_blob_sha1": "f21d0120c1cfdab0b4c185d45bdf9c8faa9f8ff0",
+      "size": 10304,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_08.ogg",
+      "git_blob_sha1": "f7c0746b084b9d56ce0a6c9e4a8e4ca5aa12aef9",
+      "size": 9952,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_09.ogg",
+      "git_blob_sha1": "b200ccd840fb9fec40fa59ecce84bef9cb89e367",
+      "size": 10107,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_BirdChomp_10.ogg",
+      "git_blob_sha1": "60d1a7331c61b0d2027ff37065b406281df681f4",
+      "size": 11952,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Click.ogg",
+      "git_blob_sha1": "47264775fc558de265addc9ffcfe40aa0d1a4c61",
+      "size": 8950,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Continue.ogg",
+      "git_blob_sha1": "654935021b4859993750ec46b3daedffc3780a37",
+      "size": 14643,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_01.ogg",
+      "git_blob_sha1": "4fa2ac414a18fa0ab625c33eaed97b117ae74f8b",
+      "size": 10388,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_02.ogg",
+      "git_blob_sha1": "7a0a8cf8e5bbea7bdd19fca98a9cc71413673edf",
+      "size": 12695,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_03.ogg",
+      "git_blob_sha1": "c8bf70c54aa58588d41c3d20b059075244079e5b",
+      "size": 9884,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_04.ogg",
+      "git_blob_sha1": "5a03487cf4a208d7cd58da1a6cd269ef2c3e2db8",
+      "size": 11989,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_05.ogg",
+      "git_blob_sha1": "8952b2bd01773d12401486ddeecf24952fb9a315",
+      "size": 11399,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_06.ogg",
+      "git_blob_sha1": "1a87f8ae4162ad844729820414fbf9f91b85d613",
+      "size": 9993,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_07.ogg",
+      "git_blob_sha1": "4a8d03d16a50c64db6c7484a16531f1585f968ee",
+      "size": 11555,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_08.ogg",
+      "git_blob_sha1": "98a2482a500d4b8269ad56bd32e608e0a2d42a94",
+      "size": 12735,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_09.ogg",
+      "git_blob_sha1": "b0e220918e722aedda10a32fdeee6b6153c37dfc",
+      "size": 15214,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_CrocodileChomp_10.ogg",
+      "git_blob_sha1": "a4616183ef5dbdce3e6c12e8851878833d41842c",
+      "size": 11819,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Exit.ogg",
+      "git_blob_sha1": "d246fd59642781b0ec566fc664f91a91abeac7bc",
+      "size": 13700,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_01.ogg",
+      "git_blob_sha1": "f0f62037be230c41e8dbeebe1b5d77a3693fcd29",
+      "size": 8814,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_02.ogg",
+      "git_blob_sha1": "098a7b6beedf00815cec0752bab776e8662bc80d",
+      "size": 9413,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_03.ogg",
+      "git_blob_sha1": "b0f7b3d29034c4f810f4b9b0f562cb823ba4e03f",
+      "size": 8748,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_04.ogg",
+      "git_blob_sha1": "23032f7e414ccc01407d4ded5afccc18b2aab6b7",
+      "size": 8862,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_05.ogg",
+      "git_blob_sha1": "bfd2095fa30f8558bf0520c3c2282ad8775606e4",
+      "size": 8407,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_06.ogg",
+      "git_blob_sha1": "944df54c8da794833c1bc483740e890e566d27e5",
+      "size": 8055,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_07.ogg",
+      "git_blob_sha1": "db3ab269bd6f1b574431e9296b2af53455684669",
+      "size": 8631,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_08.ogg",
+      "git_blob_sha1": "2977d7d6da88a55d65dcb32972d3ac43dc716ca5",
+      "size": 9432,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_09.ogg",
+      "git_blob_sha1": "f3a9917952c4666502d7dfa5e53849ae007e4bab",
+      "size": 9704,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_GiraffeChomp_10.ogg",
+      "git_blob_sha1": "e151120764b5f2aa5c77413a2d0623df2f45b8f4",
+      "size": 9049,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_01.ogg",
+      "git_blob_sha1": "eaae47f8810e10e443730e07719692af1c0c6fdc",
+      "size": 10738,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_02.ogg",
+      "git_blob_sha1": "f3aa32064ef6d66f850ee1cfb4fa94c34b641287",
+      "size": 12641,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_03.ogg",
+      "git_blob_sha1": "3cbd9277378bef2d7ebbd91e4b0f95766e2f12bc",
+      "size": 11004,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_04.ogg",
+      "git_blob_sha1": "db1cb9f422004392252f93c70cb89adfe5a13696",
+      "size": 13147,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_05.ogg",
+      "git_blob_sha1": "f65a28c2096acaf13574f366e49f846ec38b3d9f",
+      "size": 9386,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_06.ogg",
+      "git_blob_sha1": "11c042e34cf77b29a69188957c06de99f07938bc",
+      "size": 9995,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_07.ogg",
+      "git_blob_sha1": "5045fcb836b04ff8ed15484820d890a3a37c6aa2",
+      "size": 13070,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_08.ogg",
+      "git_blob_sha1": "3ec59be050cdb43e80a6b7c97122eae834e02896",
+      "size": 11417,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_09.ogg",
+      "git_blob_sha1": "62626a1ff4e10a6d8b7bfc56b89018ac67de0151",
+      "size": 12979,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HippoChomp_10.ogg",
+      "git_blob_sha1": "75a8b1edd552173fb6def0393c283d6dfb1d4229",
+      "size": 12347,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_01.ogg",
+      "git_blob_sha1": "a52547f9987516ccff5dbbadc0cbb38db7291d73",
+      "size": 7559,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_02.ogg",
+      "git_blob_sha1": "ed087e83a914eeb5c1c406a61a627b156be41fc1",
+      "size": 6745,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_03.ogg",
+      "git_blob_sha1": "6e5b466e1fd0828899825c710734fc77ee95f23b",
+      "size": 7189,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_04.ogg",
+      "git_blob_sha1": "0c6a92afe4a3f22471495f3e99a4625403a8b449",
+      "size": 7055,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_05.ogg",
+      "git_blob_sha1": "aa3093ca748683d04726efed835474b85ca0f3a3",
+      "size": 7116,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_06.ogg",
+      "git_blob_sha1": "4ba15f27ade1aacb6ed02fff8e30ac6543f9cd28",
+      "size": 7411,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_07.ogg",
+      "git_blob_sha1": "ee403eaa8387239bfad9d2884bd6c9b776e504d7",
+      "size": 6922,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_08.ogg",
+      "git_blob_sha1": "b15ee966356a190576c47439a052ebe5f1833937",
+      "size": 6619,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_09.ogg",
+      "git_blob_sha1": "d524e021fe834629580ab75afdf3dd0e99a37a8d",
+      "size": 7206,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitChar_10.ogg",
+      "git_blob_sha1": "c4069b622a657fed7d66d503ca7cb440c2ca38eb",
+      "size": 7781,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_01.ogg",
+      "git_blob_sha1": "d1722771cae63e36e3f533e1fdc98ade80936372",
+      "size": 6535,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_02.ogg",
+      "git_blob_sha1": "78f64ca6154d4bdfb596f2fcf8651f5c714dc903",
+      "size": 6332,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_03.ogg",
+      "git_blob_sha1": "83cfa07252a2b97a0e7990accc89c4bbe8cc1425",
+      "size": 7242,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_04.ogg",
+      "git_blob_sha1": "a0bbc73fb6b87fe7627a186ec89c6815c60e663b",
+      "size": 6753,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_05.ogg",
+      "git_blob_sha1": "40188df1d0104463edd0e3d40b9a7b9ba2360929",
+      "size": 6818,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_06.ogg",
+      "git_blob_sha1": "730c9e3a06cee2ffcffe1c82c7c9ffe7d16a63cd",
+      "size": 7010,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_07.ogg",
+      "git_blob_sha1": "316a9349fd67a3291fd52dbc42faf20846076738",
+      "size": 7149,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_08.ogg",
+      "git_blob_sha1": "05d1501f20a3ff244631d8a0f3d63b8d0a770cd9",
+      "size": 7086,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_09.ogg",
+      "git_blob_sha1": "b11c2ce3112e0b6bd8cb20263a740aa18395de65",
+      "size": 6940,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitGround_10.ogg",
+      "git_blob_sha1": "5c5f5ef9f3ba4dbed2237b13e1ccc6a6b1b0abd7",
+      "size": 7275,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_01.ogg",
+      "git_blob_sha1": "1bab41d77711dce13baf54abac1af161c85edb61",
+      "size": 13260,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_02.ogg",
+      "git_blob_sha1": "65722d8a24e4848a990c1a3aec9db4640a00f465",
+      "size": 12350,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_03.ogg",
+      "git_blob_sha1": "4efa2e602a77e1f771a192869b09af2033a7da92",
+      "size": 18646,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_04.ogg",
+      "git_blob_sha1": "55ee07a1698ae37acc1cef76a396b7476ce0fc1b",
+      "size": 13532,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_05.ogg",
+      "git_blob_sha1": "d412453f251629fecea79db234626a72f0446ec3",
+      "size": 15385,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_HitWater_06.ogg",
+      "git_blob_sha1": "2c7afd94fd8285c9c9f4b643ab62cf41c2e8f0d8",
+      "size": 17452,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_01.ogg",
+      "git_blob_sha1": "0fc6a5180867c62ceecaf227d24f96996eb87cb0",
+      "size": 9420,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_02.ogg",
+      "git_blob_sha1": "4fdd537c202bd327c00798becc55fad640f7a00b",
+      "size": 9914,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_03.ogg",
+      "git_blob_sha1": "a62dfc6d7acfd579b9eec732ffa28aa702cc04fa",
+      "size": 8963,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_04.ogg",
+      "git_blob_sha1": "1c80d5283d4c02aa62e57ac948bbada546f5f7c4",
+      "size": 11901,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_05.ogg",
+      "git_blob_sha1": "d0cb914d4677e9d0b4a9083bb7ecfb0e642ea960",
+      "size": 8113,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_06.ogg",
+      "git_blob_sha1": "ee9b1f85db9b89682dce5251b38e0f65cf2f883a",
+      "size": 8858,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_07.ogg",
+      "git_blob_sha1": "aa153a9fc907de0fabd9d27fd226ff62e76f5c87",
+      "size": 9958,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_08.ogg",
+      "git_blob_sha1": "c17f87fa31df65200a0aa0f78be81b009815eec4",
+      "size": 9597,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_09.ogg",
+      "git_blob_sha1": "38bbdf915bea910b91f26115d5ccb2f8b3540103",
+      "size": 11320,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_MonkeyChomp_10.ogg",
+      "git_blob_sha1": "5220384f5400a8261212b31b8024335b1a1fe087",
+      "size": 11024,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Pause.ogg",
+      "git_blob_sha1": "51a412fb1f46e47f97d0b026eca0a8e4c8f6961c",
+      "size": 13881,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_RiverLoop.ogg",
+      "git_blob_sha1": "765735c6f72eb0adc602ae0c67804d67a125a08b",
+      "size": 1172105,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Select.ogg",
+      "git_blob_sha1": "c854f31493b7f18a2f7c9c1b0a20bae669247628",
+      "size": 45444,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Start.ogg",
+      "git_blob_sha1": "0b0d202c64a1672008c3c2b45c21f78425cc2cfc",
+      "size": 13584,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_01.ogg",
+      "git_blob_sha1": "96714568e00a0e4fdbadeef4ce5bd6ebef55b729",
+      "size": 12476,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_02.ogg",
+      "git_blob_sha1": "c79eff203c1eba640886f2d4441b760ba6159faf",
+      "size": 10661,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_03.ogg",
+      "git_blob_sha1": "64e6d1ce9086e522ee0282c94f2c828b8388a76e",
+      "size": 10229,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_04.ogg",
+      "git_blob_sha1": "2bc95902bdca756450a58c76926521de1371b9ea",
+      "size": 9846,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_05.ogg",
+      "git_blob_sha1": "67c0c28d2d5ac192a87bd890b2e2d57f5879678d",
+      "size": 11238,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_06.ogg",
+      "git_blob_sha1": "fe0ec08626a0f98575085aa19d55698ff66bc042",
+      "size": 11675,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_07.ogg",
+      "git_blob_sha1": "38176ba8cc68e64f0ee91da73ed1ac3379bc35f3",
+      "size": 11374,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_08.ogg",
+      "git_blob_sha1": "7a39381edecbfba3f0c21ff2401de292623af85f",
+      "size": 10781,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_09.ogg",
+      "git_blob_sha1": "261a181e8877a8b5791b629b74846443848ddfeb",
+      "size": 11228,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_Throw_10.ogg",
+      "git_blob_sha1": "ea080288df86669c8a430d1d95c1d4007d826a09",
+      "size": 12032,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_WindLoop.ogg",
+      "git_blob_sha1": "808a5acf22a886be0a116d253f7ad2db21ddcdc0",
+      "size": 61349,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_amb_Forest.ogg",
+      "git_blob_sha1": "7caa257d8af9e7503cff14f4a4f40cbb718db0a0",
+      "size": 833858,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_amb_Rainforest.ogg",
+      "git_blob_sha1": "2ba21603a21f39fbe25c90bb3af2362a48eb2abb",
+      "size": 861680,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/sounds/sfx_ZS_amb_Savannah.ogg",
+      "git_blob_sha1": "8ba4eeed6aa3ceeba8a751cf4a64345728f6ced5",
+      "size": 1086364,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "build.gradle",
+      "git_blob_sha1": "006711e7901bd96124b551ffa3be9e9d89ff5878",
+      "size": 3753,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "cmake/find_fplutil.cmake",
+      "git_blob_sha1": "b23fd4f1dbfedfa2c9b28bb8518e2b8fe8d1d781",
+      "size": 1688,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "custom_rules.xml",
+      "git_blob_sha1": "bbc466d6064d08536662fbe245ec935b131931d7",
+      "size": 2652,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "disttools/config.json",
+      "git_blob_sha1": "4b695fe6def4babe71f3663a2300ed90d4029461",
+      "size": 2266,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "disttools/push_package.py",
+      "git_blob_sha1": "6d6454deae2d219da1cd160c6a1befcd3d8c00c1",
+      "size": 1827,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "docs/generate_docs.py",
+      "git_blob_sha1": "c3a7665695ce3c83e4d593bcc5c6af7bf5fd120f",
+      "size": 1594,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "docs/src/contributing.md",
+      "git_blob_sha1": "433b7d33548ec5d8342acac83629eea2e334dc52",
+      "size": 18,
+      "storage": "tracked",
+      "mode": "120000"
+    },
+    {
+      "path": "docs/src/doxyfile",
+      "git_blob_sha1": "88f8a1f90d814e4ec2fc208eed86546b233e40a7",
+      "size": 102941,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/doxygen_layout.xml",
+      "git_blob_sha1": "4f5bc37684ab775eb8c39f2ad454ae3833692d5f",
+      "size": 7293,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/html_overlay/launch/default/santa/index.html",
+      "git_blob_sha1": "f792737f4b03a9d9fa7f990ee6e450d8dd36d510",
+      "size": 661,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/index.md",
+      "git_blob_sha1": "18d46597edc3ebe947750518e0df2d788b0b7658",
+      "size": 6204,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/launch/default/santa/install_button.png",
+      "git_blob_sha1": "7ffc8ad36e0cd39aaa556a3c5ce20fd05b029347",
+      "size": 440073,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/launch/default/santa/santa.md",
+      "git_blob_sha1": "91ae11c58baa8d2123aea2d98f6db05864199779",
+      "size": 1996,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/launch/default/santa/zooshi_santa_button.png",
+      "git_blob_sha1": "5bd073e165a523f00e250a14c31083d61828d03b",
+      "size": 442593,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/assets.md",
+      "git_blob_sha1": "096312c626dee2c0c247e1b245624fb124de5d6b",
+      "size": 7595,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/building.md",
+      "git_blob_sha1": "826e3e88988bf6df1f31a9e11df536c278885769",
+      "size": 661,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/building_android.md",
+      "git_blob_sha1": "a0112216381495568869f91dd0e645539d49598e",
+      "size": 4928,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/building_linux.md",
+      "git_blob_sha1": "587ad1e0b2a7d385881b5a71a740c00864e81986",
+      "size": 2738,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/building_osx.md",
+      "git_blob_sha1": "7f7f26b6aca3b87b06296ae6d3cb7ff2fe812f6a",
+      "size": 4067,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/building_windows.md",
+      "git_blob_sha1": "ff63ce456a3b4680b24864cb785be768a0738bf9",
+      "size": 2440,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/cardboard.md",
+      "git_blob_sha1": "c22c4260327bbc372d68c5ea35903f8cb32373b3",
+      "size": 3278,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/cardboard_gameplay.md",
+      "git_blob_sha1": "a740260123f266a9fe226f5ff204cf20f9ad3601",
+      "size": 1920,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/configure_cardboard.png",
+      "git_blob_sha1": "d5214367eeb347f17502c13c034135cb0a610ac1",
+      "size": 1688761,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/controllers.md",
+      "git_blob_sha1": "bededce296a1e8efa590f2d22c469e55f788c12a",
+      "size": 1826,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/feeding_patron_cardboard.png",
+      "git_blob_sha1": "186adde5162d38ef44f23b1a0a101e6a884927b7",
+      "size": 744981,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/firebase.md",
+      "git_blob_sha1": "944bcfa64190b3d0774c42b8817df7f110f076f9",
+      "size": 2316,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/game_states.md",
+      "git_blob_sha1": "db0a37783db3be98e3eba5ed295ea8699ba7d81d",
+      "size": 3702,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/gameplay.md",
+      "git_blob_sha1": "4544c1e9491d4e97957c62867b9c59f9f0f35d35",
+      "size": 2687,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_breadboard.png",
+      "git_blob_sha1": "795af2a275a2a369e832d377bf7a2b3f49194879",
+      "size": 2193887,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_corgi.png",
+      "git_blob_sha1": "1b904bc4c90f3ce66482e278d8b95cc07735d340",
+      "size": 1910430,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_flatbuffers.png",
+      "git_blob_sha1": "08c3a5d275f530cd71acfbb1a47a9cefd047763d",
+      "size": 2052176,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_flatui.png",
+      "git_blob_sha1": "12d391523d989b21da76fa7ae4cccb3721e37987",
+      "size": 2993161,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_fplbase.png",
+      "git_blob_sha1": "54f43a99ace56e635db83589138dbf6e15937da3",
+      "size": 2255329,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_google_play_games.png",
+      "git_blob_sha1": "775aa045374c74a276fb46c5c7fc2b1f54413d3c",
+      "size": 2953488,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_mathfu_motive.png",
+      "git_blob_sha1": "d118441bb2c332842486ee8c461ffc28baa46848",
+      "size": 1548878,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_pindrop.png",
+      "git_blob_sha1": "310b3874a34b9b1355e5bc217ded6749a11b1300",
+      "size": 2219286,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_scene_lab.png",
+      "git_blob_sha1": "62dd70e2416976d402bde4412cfc2077e635eed6",
+      "size": 549987,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/info_panel_webp.png",
+      "git_blob_sha1": "2292fbf373ada041c9edf0f9b2622376eaebd263",
+      "size": 2758618,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/onscreen_controls.png",
+      "git_blob_sha1": "e66ec67182640dcf376ab025ad16b145d4b569c4",
+      "size": 31802,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "docs/src/programmers_guide/overview.md",
+      "git_blob_sha1": "a236cb3ded864fb51246dd5a4192c1250f2ab633",
+      "size": 3138,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/play_games_services.md",
+      "git_blob_sha1": "b9efecba734a608e30b1e2c9dfdfcc505fa6ec4c",
+      "size": 1854,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/src/programmers_guide/starting_hippo_cardboard.png",
+      "git_blob_sha1": "4133a191ee31d5b211766f10f57743ed4393d218",
+      "size": 1684391,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "google-services.json",
+      "git_blob_sha1": "88dc039f71ffaf8a87ee3d1fe38fe9f742c5732e",
+      "size": 1507,
+      "storage": "excluded-config",
+      "mode": "100644"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "git_blob_sha1": "025e5f7fb258c9b8c7776b98d503f69e87b1a003",
+      "size": 54208,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "git_blob_sha1": "e62f411ef451e71c2f12f6e5d24e25d125c26f01",
+      "size": 230,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "gradlew",
+      "git_blob_sha1": "4453ccea33d960069d9137ee65f6b21fc65e7e92",
+      "size": 5299,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "gradlew.bat",
+      "git_blob_sha1": "f9553162f122c71b34635112e717c3e733b5b212",
+      "size": 2176,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/Android.mk",
+      "git_blob_sha1": "786345594b399e7481921dd439e8145c12c550f7",
+      "size": 653,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/Application.mk",
+      "git_blob_sha1": "23a8d07b91a7c346d8a37fb2da6ba7725e9ead85",
+      "size": 770,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/android_config.mk",
+      "git_blob_sha1": "e0f3425d5c6121aac10bec0c3e2236d05ae26f6e",
+      "size": 687,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/find_fplutil.mk",
+      "git_blob_sha1": "a9a7532dfffd387f1e483ccf796d1981b2deac9a",
+      "size": 1956,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/libs/gpg/Android.mk",
+      "git_blob_sha1": "dbc7bbe2812033139f622bd5a9e4a15163feb48d",
+      "size": 1191,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "jni/libs/src/Android.mk",
+      "git_blob_sha1": "cc4d026bced2cc8bc25205a80acc26f3fd3d8998",
+      "size": 9076,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "project.properties",
+      "git_blob_sha1": "f3903f9193df9b6bb7c8b28cc0fceb5e6d002b26",
+      "size": 825,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "readme.md",
+      "git_blob_sha1": "94a991c81da5d38116f6c5a661c09b4b86b484dc",
+      "size": 2973,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "res/drawable-hdpi/ic_launcher.png",
+      "git_blob_sha1": "d9a74ac15bc0d24e9481420e81c02be8a5c3b0ee",
+      "size": 7397,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable-mdpi/ic_launcher.png",
+      "git_blob_sha1": "2160791cbbca2b80464d181e96195a75ff0afada",
+      "size": 4195,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable-xhdpi/ic_launcher.png",
+      "git_blob_sha1": "1ecfa70af56df92e46326bb120a7a9afe4a444df",
+      "size": 11064,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable-xxhdpi/ic_launcher.png",
+      "git_blob_sha1": "a0dbf5ea5ef55d782808f84971c96d0001cf33f4",
+      "size": 18970,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable-xxxhdpi/ic_launcher.png",
+      "git_blob_sha1": "7683c4a15b82f2ad7411ef6f04a7470cc8917c61",
+      "size": 28284,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable/ic_launcher.png",
+      "git_blob_sha1": "6c5c192fafb2093f41319b7ea7a221d7ae372b84",
+      "size": 2669,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "res/drawable/tv_banner.png",
+      "git_blob_sha1": "0aa888c7de5bf55d96c1652620dab97a62755f79",
+      "size": 118088,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "res/values/strings.xml",
+      "git_blob_sha1": "17168671819f665b0dec7a0304a414e072211551",
+      "size": 773,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "run.bat",
+      "git_blob_sha1": "2fb66824cd28f7a8fba30573dd5597d9ecaaa93d",
+      "size": 1045,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "run.command",
+      "git_blob_sha1": "b4dcd8a24e6737de93ce9343d4ded832c61d4369",
+      "size": 1046,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "run.sh",
+      "git_blob_sha1": "bb9dca7121f817dfc206d4eefa140a8870b7624e",
+      "size": 12,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/build_assets.py",
+      "git_blob_sha1": "1d79484d523ae30a034a919e64728beb77481b0f",
+      "size": 10336,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/continuous_build.sh",
+      "git_blob_sha1": "3569d52fcb5d579d5e6ca224f2c1ad09da62029b",
+      "size": 3921,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/continuous_build_linux.sh",
+      "git_blob_sha1": "de616ac4daf8cd09ae15de1c581ac9f775608e66",
+      "size": 1366,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/continuous_build_osx.sh",
+      "git_blob_sha1": "00e09627280cd92ac0e74ee2011c5f6bfe5916e0",
+      "size": 1594,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/export.py",
+      "git_blob_sha1": "ed59d4e1d6174e7c13b61bec55ed18d763e54d0a",
+      "size": 4604,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/package_source.sh",
+      "git_blob_sha1": "bc5c0fd17b41e440f131a01309d9e180d2a2380d",
+      "size": 2441,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "src/admob.cpp",
+      "git_blob_sha1": "f9892099f1db9c54e12abb04175498a787d91cbd",
+      "size": 6104,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/admob.h",
+      "git_blob_sha1": "644e4dc72a8fff3ae1e91c66d506db91bd77635c",
+      "size": 3687,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/analytics.cpp",
+      "git_blob_sha1": "9b4b4f419bbaf5b6d1ede812dc2c71d6102feed8",
+      "size": 2317,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/analytics.h",
+      "git_blob_sha1": "abbf54503c0246da7443a256837d8aaf3f013eb9",
+      "size": 2084,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/camera.cpp",
+      "git_blob_sha1": "1a914a4c21435d2e38b346d1700221c53b36a15b",
+      "size": 2506,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/camera.h",
+      "git_blob_sha1": "4da6808d979501104cf14b6c9fd8d050530314be",
+      "size": 4360,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/common.h",
+      "git_blob_sha1": "082ca16e3dcc8b3aa7d01bc87d75f2ff9d35503b",
+      "size": 960,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/attributes.cpp",
+      "git_blob_sha1": "3edf1eeff5a97ab53d733b662c5c22d52fe84d8d",
+      "size": 1740,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/attributes.h",
+      "git_blob_sha1": "a9844b330c6d3d8f7922bc390647cfde257f4cd7",
+      "size": 2496,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/audio_listener.cpp",
+      "git_blob_sha1": "c9430be00a319fefb083f9732a8ab306b92804cd",
+      "size": 2723,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/audio_listener.h",
+      "git_blob_sha1": "2f59668448dbbf5b2a0965842a3cb56e513f2bfa",
+      "size": 1679,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/lap_dependent.cpp",
+      "git_blob_sha1": "d4c8604d275d7a56dcee9d4a5407cd644eeb75c3",
+      "size": 5430,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/lap_dependent.h",
+      "git_blob_sha1": "e2a0f15f85ec5b6c2c2767ac4c919a67db521a46",
+      "size": 1836,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/light.cpp",
+      "git_blob_sha1": "b7eaee0770d4e42260bd2b7d98a9bdc79438a1a9",
+      "size": 2695,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/light.h",
+      "git_blob_sha1": "e5ce226d66cb789dfda09b00fb821eeee537f195",
+      "size": 3323,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/patron.cpp",
+      "git_blob_sha1": "247a068b93a8f07da2af7333679575b2dd873ce3",
+      "size": 42386,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "src/components/patron.h",
+      "git_blob_sha1": "78ee87422050a051416892ec5730decc9028ec44",
+      "size": 12873,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/player.cpp",
+      "git_blob_sha1": "5826e8b073a6caae6a72c03a0744d556ed8c6bdc",
+      "size": 8035,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/player.h",
+      "git_blob_sha1": "f03186419cacdb53f0d3775dad491d2d8f15e8ae",
+      "size": 2815,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/player_projectile.cpp",
+      "git_blob_sha1": "2f2831a1c87dea45828fd23c6cd360e0414157b3",
+      "size": 1468,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/player_projectile.h",
+      "git_blob_sha1": "8cf8ad479c6a86dfaaa3ce327cfd18efc57b6154",
+      "size": 1937,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/rail_denizen.cpp",
+      "git_blob_sha1": "358f9432d43bdb13cc433d2fd31fb40de7fb209d",
+      "size": 15323,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/rail_denizen.h",
+      "git_blob_sha1": "b46407a892233606f24675f2527b75a076310a8e",
+      "size": 5163,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/rail_node.cpp",
+      "git_blob_sha1": "174c0fd2b1a9b7c6d33974bf1c6bb616c06380a9",
+      "size": 2170,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/rail_node.h",
+      "git_blob_sha1": "994b129222add461e05a2e29e504ccf4dde2afe7",
+      "size": 1580,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/render_3d_text.cpp",
+      "git_blob_sha1": "bae0916b3e895c45457f11233670ff839537d6b3",
+      "size": 7306,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/render_3d_text.h",
+      "git_blob_sha1": "6895297aa211d3abc8e524146400edf0afa66a73",
+      "size": 7179,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/river.cpp",
+      "git_blob_sha1": "5792fb5417dcabb957df4d15d74f00cebb3a3f0d",
+      "size": 22716,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "src/components/river.h",
+      "git_blob_sha1": "54e2aa36e6b61a39218c15b2500b79cf90298ce1",
+      "size": 2588,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/scenery.cpp",
+      "git_blob_sha1": "80f635267b451975ec98519a283cae2a71648771",
+      "size": 13354,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/scenery.h",
+      "git_blob_sha1": "6f9f214b2c3e29c91c915c9968bacc36d1528253",
+      "size": 4520,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/services.cpp",
+      "git_blob_sha1": "13b04d9eabc47bcdd61df27ebd44233773b113cf",
+      "size": 749,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/services.h",
+      "git_blob_sha1": "a7e2c4b5e3a4d3edd91a41cd6c8e0b157ee985a5",
+      "size": 4987,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/shadow_controller.cpp",
+      "git_blob_sha1": "395fa0ee7deb70a006eee3327fe86d43216bdb7f",
+      "size": 2658,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/shadow_controller.h",
+      "git_blob_sha1": "d5fe99368d4f0fa29cafe11e9fe2d8e132be2e6c",
+      "size": 1574,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/simple_movement.cpp",
+      "git_blob_sha1": "a7a46b0fed2bcb0e3613a7d6b5649100729fca64",
+      "size": 2485,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/simple_movement.h",
+      "git_blob_sha1": "c5d66f6b4e49d665856cbcd1215f591530c5bf77",
+      "size": 1687,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/sound.cpp",
+      "git_blob_sha1": "d1960446ab5e1b478c7e9b2e1d217265749b569f",
+      "size": 2534,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/sound.h",
+      "git_blob_sha1": "e47f82a96b6a8e4abbb7e66df79c8ea003e512b0",
+      "size": 1520,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/time_limit.cpp",
+      "git_blob_sha1": "ffe43e29f6189a08725785a60521e3485e092cdd",
+      "size": 3079,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/components/time_limit.h",
+      "git_blob_sha1": "1a7d33ceafb398514df8cc823c179ea63aa055be",
+      "size": 1859,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/default_entity_factory.cpp",
+      "git_blob_sha1": "2add291714b33dd2183bd7a224fba2654162cb9b",
+      "size": 822,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/default_graph_factory.cpp",
+      "git_blob_sha1": "a2eca7f199e7f4305be63f3db874d3b3b6743cc2",
+      "size": 822,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/assets.fbs",
+      "git_blob_sha1": "517e546947b16da514b1efaa9494d870910b1331",
+      "size": 1129,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/attributes.fbs",
+      "git_blob_sha1": "dd7ce7c60be0f7ef867945cd2fdbd552cb9f7343",
+      "size": 804,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/components.fbs",
+      "git_blob_sha1": "02d2c5fdbf2908a467561e254184f0ef54ee812f",
+      "size": 10025,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/config.fbs",
+      "git_blob_sha1": "a0adec5910d012c61234aa7b393d10c5587e80f4",
+      "size": 8770,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/gpg.fbs",
+      "git_blob_sha1": "ee0c16bc37c3f40e2c504968861efbb6af45adf6",
+      "size": 888,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/graph.fbs",
+      "git_blob_sha1": "377f62d6cbc52cab9973ea1239756b4c56018277",
+      "size": 1445,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/input_config.fbs",
+      "git_blob_sha1": "548a08b802b573f7ff150dfac79aeb4d3bc78403",
+      "size": 824,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/rail_def.fbs",
+      "git_blob_sha1": "bcf0584a128ffb7d488ca46b983608e01e4773be",
+      "size": 837,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/save_data.fbs",
+      "git_blob_sha1": "73f6a95b927c19d9b120345a6b3d82a736777bfd",
+      "size": 1112,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/flatbufferschemas/unlockables.fbs",
+      "git_blob_sha1": "6392918d3ff869262f855bf468b3f63429281cb8",
+      "size": 1332,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/full_screen_fader.cpp",
+      "git_blob_sha1": "efab01f24c4325ab8c0644568ee9e192148f8146",
+      "size": 3318,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/full_screen_fader.h",
+      "git_blob_sha1": "8e610dfaaa26102e4b11f3257933f606ba0476cf",
+      "size": 3030,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/game.cpp",
+      "git_blob_sha1": "d52b0984696cb322270ee0b9a450c189ded5d2f4",
+      "size": 35057,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/game.h",
+      "git_blob_sha1": "0daa2eba99a631e1558d657ae54619487cb984e7",
+      "size": 6367,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gpg_manager.cpp",
+      "git_blob_sha1": "51f29a458a54ed66f29a2f360eea8931a652ca38",
+      "size": 13939,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gpg_manager.h",
+      "git_blob_sha1": "0767958b10f45a87bb837ad9fede136fd3567c49",
+      "size": 4000,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gpg_multiplayer.cpp",
+      "git_blob_sha1": "9d9b33ff828921ff82e4fd48410b4fe0a0323f2b",
+      "size": 30894,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gpg_multiplayer.h",
+      "git_blob_sha1": "049f1694d33ce43324912ad794ea8952573fd223",
+      "size": 16649,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/gui.cpp",
+      "git_blob_sha1": "1a2576e0c6e8ebe05ee11271af2c5b5a4c10c97b",
+      "size": 36974,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/android_cardboard_controller.cpp",
+      "git_blob_sha1": "a5890f42c0b865a5c3e6bf4dd72969d7e24f16a5",
+      "size": 2281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/android_cardboard_controller.h",
+      "git_blob_sha1": "cda9611618a8603eb89bc5a2ec47af2bf2ff588f",
+      "size": 1160,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/base_player_controller.h",
+      "git_blob_sha1": "710f69b5fb01b9bd1e28313f308a237ef35df00a",
+      "size": 3260,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/gamepad_controller.cpp",
+      "git_blob_sha1": "44c49bbc014412d0ff254346ae65554a33f62a25",
+      "size": 3915,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/gamepad_controller.h",
+      "git_blob_sha1": "c9e4afaf5ea427aaf0f6ae6643c940099dc55e24",
+      "size": 1323,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/mouse_controller.cpp",
+      "git_blob_sha1": "e3915a0f2dffb127e89d3275c202e042d8cec613",
+      "size": 2182,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/mouse_controller.h",
+      "git_blob_sha1": "c611e0ee703d1c78199d7a2cf3a88fc0df42bad3",
+      "size": 1084,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/onscreen_controller.cpp",
+      "git_blob_sha1": "085493aaef24cef799e9afd9b4cb886e612c19e0",
+      "size": 8900,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/inputcontrollers/onscreen_controller.h",
+      "git_blob_sha1": "e5370b6e51ea0a69f9143c25d5321709c13eeee4",
+      "size": 3048,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/invites.cpp",
+      "git_blob_sha1": "9b0d1fdb25e33a98f6bd04b7a6c5d986635c529d",
+      "size": 3251,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/invites.h",
+      "git_blob_sha1": "6eb2aac055fd9580dbecb10efc9bc1d84482f52c",
+      "size": 2850,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/main.cpp",
+      "git_blob_sha1": "adb227b086878b76b0d2d4c7720a934b133fd4a5",
+      "size": 1441,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/messaging.cpp",
+      "git_blob_sha1": "c356b3ecbc113e9e9f2946976362657b7e7901f2",
+      "size": 4017,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/messaging.h",
+      "git_blob_sha1": "33399b24447393e2d30ef2d3523a08ac97ce642e",
+      "size": 1669,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/attributes.cpp",
+      "git_blob_sha1": "05f7d3f6d37507ad383fea3eac3bec33afb608a1",
+      "size": 3539,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/attributes.h",
+      "git_blob_sha1": "551b67531b44869471f84d061e267603919b8e1f",
+      "size": 1070,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/gpg.cpp",
+      "git_blob_sha1": "3cb34d4eec57a4ef0cfa813cecd3fda387d2fc18",
+      "size": 4470,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/gpg.h",
+      "git_blob_sha1": "9be081c7e9046413bec55fc839622295be59cfe1",
+      "size": 1044,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/patron.cpp",
+      "git_blob_sha1": "b070f6abfa8685de17a586e894c158414e0433f0",
+      "size": 4276,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/patron.h",
+      "git_blob_sha1": "b4704bc354ee240a56f841a0a84d92bf5e5b986c",
+      "size": 1038,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/player.cpp",
+      "git_blob_sha1": "d9d418da40fd3ec7bc327e8a299c65877a3ed7a3",
+      "size": 4681,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/player.h",
+      "git_blob_sha1": "623674a9c0ed050ae871a0c765713d13dac05eaf",
+      "size": 1082,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/rail_denizen.cpp",
+      "git_blob_sha1": "04aa4cc9612fb8ae82bc7e2e453313c35ef2c31a",
+      "size": 7355,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/rail_denizen.h",
+      "git_blob_sha1": "b9192ecef578098244d41aa2aebd44d2b742608b",
+      "size": 1122,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/state.cpp",
+      "git_blob_sha1": "b3a95314f671d7932e65625991ba21a7c9a8220b",
+      "size": 1726,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/state.h",
+      "git_blob_sha1": "a28a85bd0dce98978b9205e0e70dd6906064244e",
+      "size": 936,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/ui_string.cpp",
+      "git_blob_sha1": "0c83eadc4ba3420dc8a66240068858f2657d986b",
+      "size": 2656,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/ui_string.h",
+      "git_blob_sha1": "693e0692d9c065d24c8392e40559ee476124fc6a",
+      "size": 1072,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/zooshi.cpp",
+      "git_blob_sha1": "acb4109644d9bec4ed2e1e40b919868d1759754f",
+      "size": 5140,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/modules/zooshi.h",
+      "git_blob_sha1": "fadeb10a75ce0c49c53b75c9538baef7fa9acc35",
+      "size": 1225,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/railmanager.cpp",
+      "git_blob_sha1": "de6e219dd44cf594808dc1ff65f175c59d676210",
+      "size": 6607,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "src/railmanager.h",
+      "git_blob_sha1": "a2448a28fbf6bc0d1d486b389aa95610cf9074dd",
+      "size": 3288,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/bird_appear.fbx",
+      "git_blob_sha1": "a55349a133fa4033b3e5defca13da5cd5205987f",
+      "size": 384308,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/bird_disappear.fbx",
+      "git_blob_sha1": "0412afa13a3b57f5f751e3eb7bf8b30fe3eecd9a",
+      "size": 384425,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/bird_eat.fbx",
+      "git_blob_sha1": "a55a84cc568dd4b89beec86122e588bc3619a989",
+      "size": 230752,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/bird_happy.fbx",
+      "git_blob_sha1": "dc85596e74427c8a0271ad903b7bb68e1ab7ff30",
+      "size": 389577,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/bird_idle.fbx",
+      "git_blob_sha1": "f46d1126f08970a48c260903645b6fa96a5d8278",
+      "size": 364429,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/crocodile_appear.fbx",
+      "git_blob_sha1": "8e1b684af1d61034b160398cd69ca10f0293de08",
+      "size": 728462,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/crocodile_disappear.fbx",
+      "git_blob_sha1": "2340be1abfe09f36ac7ec7921c229a5a8c3ec5d7",
+      "size": 737014,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/crocodile_eat.fbx",
+      "git_blob_sha1": "2ff84487a5cd8e318a12e25a69ed0dcd55f8613c",
+      "size": 250112,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/crocodile_happy.fbx",
+      "git_blob_sha1": "0fd61d8bd3d61cc3ad377de52795bbb55a473b1c",
+      "size": 732055,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/crocodile_idle.fbx",
+      "git_blob_sha1": "1e9c486c4eb51f5de73ec0aa639d6c683eaf8f49",
+      "size": 736983,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/fern_mid_sway.fbx",
+      "git_blob_sha1": "aaf5d1e55c00325d6db34fb7b87ff6e6ba748ca5",
+      "size": 134880,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/fern_short_sway.fbx",
+      "git_blob_sha1": "16e20d21d9c6fe9d854fcc5c0ac509ea5b96ca90",
+      "size": 131648,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/fern_tall_sway.fbx",
+      "git_blob_sha1": "c681f3cedbcaac5f2d9c9de1cf4edc9b2f6c25a8",
+      "size": 150944,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/gate_open.fbx",
+      "git_blob_sha1": "75a6c9a850613d0214662b0e3302dee3a3238e24",
+      "size": 67680,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/giraffe_appear.fbx",
+      "git_blob_sha1": "7955a2adc0fd513f2e52aa3443605eeb5b4886d8",
+      "size": 430496,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/giraffe_disappear.fbx",
+      "git_blob_sha1": "69461ddc1a55287735cd947cc497aa12e1334320",
+      "size": 432192,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/giraffe_eat.fbx",
+      "git_blob_sha1": "66d89f0f608b995d50a981809f8c862782153d57",
+      "size": 426400,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/giraffe_happy.fbx",
+      "git_blob_sha1": "5701e2d19052c5675836a1c0960c645527963d91",
+      "size": 418672,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/giraffe_idle.fbx",
+      "git_blob_sha1": "7256f907a8249e78fbefdf224d88db50e53bc3f6",
+      "size": 421872,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/heart_float_up.fbx",
+      "git_blob_sha1": "62ff418df9dc4641a3a9cfacb0c5ce215575c8f8",
+      "size": 55607,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/hippo_appear.fbx",
+      "git_blob_sha1": "81e3f2d4bf8d9fc1313d66d7592c1b9f88914b0a",
+      "size": 256672,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/hippo_disappear.fbx",
+      "git_blob_sha1": "4b9931065edb3759cd80ff2c56c2a12d4f4dd262",
+      "size": 259216,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/hippo_eat.fbx",
+      "git_blob_sha1": "8b0a9116858a3aadb93c5162b8d179d024b2dd3b",
+      "size": 253424,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/hippo_happy.fbx",
+      "git_blob_sha1": "fcdedc39ccb4294661ebff6b65654ed512b195df",
+      "size": 241648,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/hippo_idle.fbx",
+      "git_blob_sha1": "7c07b2d5e00b6f942a796a1c7e94e8ea5d8d1a10",
+      "size": 291168,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/lady_mandrill_appear.fbx",
+      "git_blob_sha1": "5d65879fdc271bed3d8c04e2f0177dc6ccb9cd1a",
+      "size": 762607,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/lady_mandrill_disappear.fbx",
+      "git_blob_sha1": "d441a10bfd379f2182f6f38c1a2a7d98647b0a95",
+      "size": 757199,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/lady_mandrill_eat.fbx",
+      "git_blob_sha1": "bc4272d50797615b4e1bc45d93d834129e107ade",
+      "size": 762039,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/lady_mandrill_happy.fbx",
+      "git_blob_sha1": "29d59a9efc62dd7b3cd2de0518aaf45299dde6e5",
+      "size": 745908,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/lady_mandrill_idle.fbx",
+      "git_blob_sha1": "85e6938398cb9232e58b5fbd11fe83399cff39fa",
+      "size": 747580,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/scenery_appear.fbx",
+      "git_blob_sha1": "4c0d6d3517dd80ec55f7a9018b284257c78beb20",
+      "size": 20084,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/anims/scenery_disappear.fbx",
+      "git_blob_sha1": "8f892089734112801a4b16cab17fa41ed3cec8e1",
+      "size": 19078,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/asset_meta.json",
+      "git_blob_sha1": "fcd9ed5651ac23cc7b6ec6d874b07937eac688fb",
+      "size": 1264,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/assets.json",
+      "git_blob_sha1": "43ea7d4bec62265e3902ca2dfa588e419742a03d",
+      "size": 7720,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/audio_config.json",
+      "git_blob_sha1": "282bf86db772a0e3c04c90d7932f4721f292af83",
+      "size": 200,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/buses.json",
+      "git_blob_sha1": "c5edb119dc95d120ac5a08d5e98bed6defd09349",
+      "size": 1102,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/config.json",
+      "git_blob_sha1": "8513efb3a0e1d70148a785524b78267191c24875",
+      "size": 12361,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/entity_lights.json",
+      "git_blob_sha1": "65db430509c3f2e873fd08dd88dbff2d928eb0de",
+      "size": 1343,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/entity_list.json",
+      "git_blob_sha1": "a95ff10647a1e18e6fc61cbfb65ac16082e45b47",
+      "size": 2445,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/entity_prototypes.json",
+      "git_blob_sha1": "c56cf9fa2c224508c7e83a6524c1968105e700f5",
+      "size": 93081,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/entity_rails.json",
+      "git_blob_sha1": "f82fe0a16eae6131dab4516313d0af543186a7b7",
+      "size": 6466,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/entity_ring.json",
+      "git_blob_sha1": "df1bd6dcbeaa6c17b714976f55e633b1c7f565cd",
+      "size": 32994,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/fonts/NotoSans-Bold.ttf",
+      "git_blob_sha1": "a97acf2beffaa7d0e9df0b399fd0c2ad48caddaa",
+      "size": 204464,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/fonts/NotoSans-Bold.ttf.readme.txt",
+      "git_blob_sha1": "3a68eacbe750d068b836f0ca30d7d07a729ec64f",
+      "size": 177,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/fonts/RaviPrakash-Regular.ttf",
+      "git_blob_sha1": "6a07f10bdf4844fcbaec09acc34552ff11e25530",
+      "size": 313012,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/fonts/RaviPrakash-Regular.ttf.readme.txt",
+      "git_blob_sha1": "c8b22cc62096f8d3d80596dc5d8d1fffe7b6a651",
+      "size": 211,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/bird.json",
+      "git_blob_sha1": "fcd9067d9a68232a15f87f67136387c68d791717",
+      "size": 9719,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/croc.json",
+      "git_blob_sha1": "831904233a9fae6503fa696b149193c2953a62dd",
+      "size": 9719,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/first_hippo.json",
+      "git_blob_sha1": "604927938e530aa620055f20e65c7556857bd32c",
+      "size": 4851,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/gate.json",
+      "git_blob_sha1": "4fa43c52b7ff68da14c05657c4a2bde7b2d4aa74",
+      "size": 5181,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/giraffe.json",
+      "git_blob_sha1": "4001db35acf2429e4cca72278804a7ba0af41d71",
+      "size": 9722,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/hippo.json",
+      "git_blob_sha1": "5560ad7e23a58a96eaccdd63d1aa4801a0d408a1",
+      "size": 9720,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/mandrill.json",
+      "git_blob_sha1": "6a6265a358f5a45a90cfb0f5c0c0c875ec69c640",
+      "size": 9728,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/new_lap.json",
+      "git_blob_sha1": "715af6236364a35afb8bc56a3778d0a8e7855dba",
+      "size": 11166,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/on_fire.json",
+      "git_blob_sha1": "d75c94e7488d8936f77454da6784258147da8e9e",
+      "size": 2946,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/score.json",
+      "git_blob_sha1": "ad160404f4793b2f824989ffd5457a7d429e1f8f",
+      "size": 6104,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/score_board.json",
+      "git_blob_sha1": "84c5585e4dd33d422579b49a8b6ad1720ca09129",
+      "size": 27321,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/single_lap.json",
+      "git_blob_sha1": "0268343e45a2d4bba622e9d8e4378b9992765c58",
+      "size": 1746,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/sushi.json",
+      "git_blob_sha1": "525afe2ef7e9c30637101f93b6bdf3f808d929d4",
+      "size": 5692,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/graphs/test.json",
+      "git_blob_sha1": "25b5326cf680e8e914e0b653e5d2f5839472ecb4",
+      "size": 2259,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/input_config.json",
+      "git_blob_sha1": "523dd5ee2a35a44255b0e49f921796e1123d93ba",
+      "size": 106,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_easy_list.json",
+      "git_blob_sha1": "1394a59bfe411d5c1f54edf52aa0b7d0da870b83",
+      "size": 2685,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_easy_patrons.json",
+      "git_blob_sha1": "43aad449ede26bdb52a0ccae9a2c32965ad495e3",
+      "size": 12824,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_easy_props.json",
+      "git_blob_sha1": "f31ab89fc8d2d86a4021c0cf290e8deefdb35863",
+      "size": 38321,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_easy_rail.json",
+      "git_blob_sha1": "4cfc7798248863473fdd1b545872b3ad117a0e30",
+      "size": 12136,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_endless_list.json",
+      "git_blob_sha1": "98566a06db569a76b60ae182300ee57c91f53aec",
+      "size": 2199,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_endless_patrons.json",
+      "git_blob_sha1": "1cbea57fa419af7a20c3fef3f91d73953b60ec2f",
+      "size": 30621,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_endless_props.json",
+      "git_blob_sha1": "4fff252ce319541c48c23e47e432de1991784af5",
+      "size": 126752,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/lvl_endless_rail.json",
+      "git_blob_sha1": "50956080633bf1cd343456f45571070d05288ffd",
+      "size": 28614,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/gate_closed_icon.json",
+      "git_blob_sha1": "5d543d3c54e2520515b2b308af25584467cf83cb",
+      "size": 103,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/gate_open_icon.json",
+      "git_blob_sha1": "7516fb013d68ab5d575d9f72573b70033dad0430",
+      "size": 101,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/ground_material.json",
+      "git_blob_sha1": "ea0090eeaea07d9bb5809e25fef92e5029249ba3",
+      "size": 74,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/joystick_base.json",
+      "git_blob_sha1": "ce4214a96454fcd1da40654538c5e2c919a6d800",
+      "size": 101,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/joystick_tip.json",
+      "git_blob_sha1": "6c1131bae3404310ffda4e0463d5f0d1be05f72f",
+      "size": 100,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/lake_daytime.json",
+      "git_blob_sha1": "2bac7914c2504d1ba1bcd85ea54e58d77f0aeb58",
+      "size": 74,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/loading.json",
+      "git_blob_sha1": "26af6bf47dfc3c75146ea3fbaf22ec7262de00a3",
+      "size": 117,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/pixel_1x1.json",
+      "git_blob_sha1": "1755ed885f3be04018ae361fd2c20e860024b647",
+      "size": 97,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/raft_sign.json",
+      "git_blob_sha1": "c74f6db09ceaeaff543f174bff87f61c13914821",
+      "size": 117,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_grass_daytime.json",
+      "git_blob_sha1": "29721363f1d8f68e06dc4cd2b88b51144030b2d1",
+      "size": 71,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_grass_daytime_savanna_daytime.json",
+      "git_blob_sha1": "165e430c2e0fa9e264f47e818cae737ed73927ef",
+      "size": 112,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_grass_sunset.json",
+      "git_blob_sha1": "f980b7fbbc620fa435db6668805ea61a99eb1e8d",
+      "size": 70,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_grass_twilight.json",
+      "git_blob_sha1": "22b79ed5c792b2979e8097d99ef59f6990ad1ff9",
+      "size": 72,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_daytime.json",
+      "git_blob_sha1": "00fda537b20661a7d668e460bc4bf5e8c599e481",
+      "size": 73,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_daytime_grass_daytime.json",
+      "git_blob_sha1": "e1a972b70d7b6f2f29fb4458dbde58bf43484623",
+      "size": 112,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_daytime_savanna_sunset.json",
+      "git_blob_sha1": "09e885c0ba29df818c9660fa07e24738e8f47257",
+      "size": 114,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_sunset.json",
+      "git_blob_sha1": "db8621478ecdcf5871705538034df302eeaff8df",
+      "size": 72,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_sunset_savanna_twilight.json",
+      "git_blob_sha1": "7cc7e25783ba7902b13013d1b5e2dcb4468cf6a1",
+      "size": 115,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_twilight.json",
+      "git_blob_sha1": "44d1cfa1d1e0baee9232419ddb6f80af8dfaaae9",
+      "size": 74,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/riverbank_savanna_twilight_grass_daytime.json",
+      "git_blob_sha1": "5f4be1130dc9ea60659fddcbbfefbee2db85a44a",
+      "size": 114,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/settings_gear.json",
+      "git_blob_sha1": "409d58ae5d9ce5f01e67c48a483b1baff46b159f",
+      "size": 92,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/materials/ui_images.json",
+      "git_blob_sha1": "13638ef09880a5555589f8fbdb3bafd6d61f3cc7",
+      "size": 943,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/bird_d.png",
+      "git_blob_sha1": "3a3dbbe4828294b1da70998c4d72470988587f59",
+      "size": 1291790,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/bird_rig.fbx",
+      "git_blob_sha1": "84639f713437fcc751ff6806dd03ab69ebd799ad",
+      "size": 192288,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/cardboard_box_2.png",
+      "git_blob_sha1": "230342c9dbfe6b065eea3c5fa5d3ff316f74a9b9",
+      "size": 4159769,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/cardboard_viewer.png",
+      "git_blob_sha1": "9e7ae3c360d3ea567fde2cf212b5af62db591b1f",
+      "size": 150970,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/crocodile_d.png",
+      "git_blob_sha1": "ae7f09a59693eecc2c2d5a896fccd968ae6a396d",
+      "size": 1457236,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/crocodile_rig.fbx",
+      "git_blob_sha1": "7750c35220937b0395431c069acd1f44c8984d06",
+      "size": 221360,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/daytime_skybox.png",
+      "git_blob_sha1": "241f60a1838e5fdf7ae5de978587fcb5c66ef068",
+      "size": 1660063,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/fern_mid.fbx",
+      "git_blob_sha1": "d81c662d95c88374785c9fbdf679d482d619ad6e",
+      "size": 92880,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/fern_short.fbx",
+      "git_blob_sha1": "fe1d45446c11703e54094c248a84a55f28d9d74b",
+      "size": 89664,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/fern_tall.fbx",
+      "git_blob_sha1": "d729832d127cc83a4c7a59c6f2c7f686853d4fbb",
+      "size": 100768,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/gate.fbx",
+      "git_blob_sha1": "f4ca4b87feba4f404564afd892162b067b4329a1",
+      "size": 64016,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/gate.png",
+      "git_blob_sha1": "04ac9f61f414333b481b3bbff001f9dc453a4ea5",
+      "size": 3298600,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/gate_closed_icon.json",
+      "git_blob_sha1": "76753b2446bf355cc416b39bd9b117b030499af1",
+      "size": 845,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/gate_open_icon.json",
+      "git_blob_sha1": "7853523aa65c90197c17da1ab6ad7e6c0f6f11f7",
+      "size": 843,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/giraffe_d.png",
+      "git_blob_sha1": "92ded95cb93b81143c942cf9f3198d97d5c95db1",
+      "size": 1121188,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/giraffe_rig.fbx",
+      "git_blob_sha1": "83c16cdbd2e703c37f688f12ffcad78a5b8152bf",
+      "size": 412192,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/grass_dense.fbx",
+      "git_blob_sha1": "880e686540322f6c78dbf0dc88578886295961a0",
+      "size": 53424,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/grass_small.fbx",
+      "git_blob_sha1": "29d0d94fe963a416a59b2836bcd55de4aaed4cb9",
+      "size": 32496,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/grass_wide.fbx",
+      "git_blob_sha1": "a52bc606f7163f278d3dfe6b37e9b32886e50d5e",
+      "size": 35808,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/ground.json",
+      "git_blob_sha1": "0047f35f45c457c05013fa2a3d38915ba6e2c3fb",
+      "size": 558,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/heart.fbx",
+      "git_blob_sha1": "f3fdd391ae29492a180ba7c4975ac65da2490c27",
+      "size": 25920,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/heart_meter_line.fbx",
+      "git_blob_sha1": "c37c84071bdb59a9e55768f5fe3e8634eea0cb07",
+      "size": 22912,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/hippo_d.png",
+      "git_blob_sha1": "1c0114b270c6e0314371d5258976dad62f31bfd5",
+      "size": 1574946,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/hippo_rig.fbx",
+      "git_blob_sha1": "ec56174bd2b499ea0617510e0785f33c7e1a9cd9",
+      "size": 215360,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/introbox.fbx",
+      "git_blob_sha1": "8c4b32d7af877af4bca2705a7656c4ebc138cd7d",
+      "size": 122720,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/lady_mandrill_d.png",
+      "git_blob_sha1": "8ee891a843eab53b0ba1595485cd9b5afb82a613",
+      "size": 1397730,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/lady_mandrill_rig.fbx",
+      "git_blob_sha1": "c0b90695f91ff05d75d4771d0d54a176d358d5e9",
+      "size": 265760,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/leaf_grass_diffuse.png",
+      "git_blob_sha1": "163e2eb1da18ca910c224232278690cea48114f0",
+      "size": 4496600,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/log.fbx",
+      "git_blob_sha1": "5795aa6b00777c744397626f450450a10183f59e",
+      "size": 27456,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/log_texture.png",
+      "git_blob_sha1": "63f76bf39f3b11c34a4452ef4868be09fd966b97",
+      "size": 1150565,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/point_light.fbx",
+      "git_blob_sha1": "4bf022dbc065c30360e535a531342b064d2110d4",
+      "size": 20352,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/raft.fbx",
+      "git_blob_sha1": "7fa29df8df3d3b20ee4fe625607d891a60f97b8a",
+      "size": 146576,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/raft_diffuse.png",
+      "git_blob_sha1": "75dbaacfb505c1247ff077421ad9dab709bab470",
+      "size": 16801518,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/raft_sign.json",
+      "git_blob_sha1": "88bfde7908e611c2ad89495ff5f5284815b8a2ac",
+      "size": 839,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rock_mid.fbx",
+      "git_blob_sha1": "9cc09e7c8237bde6a7c62bf2d9afc05cbb612e8a",
+      "size": 65523,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rock_short.fbx",
+      "git_blob_sha1": "fd05af7d5ec3e9200192922ea8404431d627e7bc",
+      "size": 71645,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rock_smaller.fbx",
+      "git_blob_sha1": "c83306b0ddba4a27536e5f52a94d58ec268c3b19",
+      "size": 43315,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rock_smallest.fbx",
+      "git_blob_sha1": "5f9e8ecbee87b699a8d7338fbd00785f3f0558a2",
+      "size": 43262,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rock_tall.fbx",
+      "git_blob_sha1": "fc472a0a3fbbf1c2a62728424ce4b7f216f301b6",
+      "size": 82683,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/rocks_paint.png",
+      "git_blob_sha1": "af0b500caad40df375cde968ff2b09e919afd16f",
+      "size": 4117007,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/savanna_tree_01.fbx",
+      "git_blob_sha1": "3172d06df7ff298fe13ce306db405349aabc715e",
+      "size": 33888,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/savanna_tree_01.png",
+      "git_blob_sha1": "1644ae292c5de9d5d54f82eba9d722b9be7b2ab7",
+      "size": 540584,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/skybox_daytime.fbx",
+      "git_blob_sha1": "29448eb61d565180cea97539ec1b83a8156e398b",
+      "size": 20160,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/spot_light.fbx",
+      "git_blob_sha1": "6ee618487a1505d623490d0d89db761dc6ecac0b",
+      "size": 20304,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/sun_light.fbx",
+      "git_blob_sha1": "8ac5578a59afe70a1bbc56c7e4d7e7eca675f9c6",
+      "size": 23088,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/sushi_salmon.fbx",
+      "git_blob_sha1": "0822629b94b06db32f9c96e9aa5715922579c8ff",
+      "size": 42176,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/sushi_salmon.png",
+      "git_blob_sha1": "90044d7f14ea80a0ba549d809d809f5001586240",
+      "size": 3327560,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/sushi_shrimp.fbx",
+      "git_blob_sha1": "e374771bf63761286ea306dc7d125c4de1eea012",
+      "size": 47200,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/sushi_shrimp.png",
+      "git_blob_sha1": "e702437ed8ad3c7b2c41479ba747c11e1fc47e84",
+      "size": 5105526,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/tree_03.fbx",
+      "git_blob_sha1": "3da42236428ae007d964b7aea7fb22e3830db824",
+      "size": 28032,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/tree_03.png",
+      "git_blob_sha1": "b24f1e7bd80a074c1b2270241ba015b196a24798",
+      "size": 513872,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/tree_04.fbx",
+      "git_blob_sha1": "25864fb218a1160b610df1426a96e35bf7745aa1",
+      "size": 32720,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/tree_saturated.fbx",
+      "git_blob_sha1": "8396b8903a0912affba57d99aae0bb1beca076c9",
+      "size": 34016,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/tree_saturated.png",
+      "git_blob_sha1": "85151fedc10041e852b68f1149b2c81df68206df",
+      "size": 246230,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/meshes/trees_04.png",
+      "git_blob_sha1": "73ede7172c07aeeb1d84d16738a91114a257e64f",
+      "size": 462328,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/bird_appear.fbx",
+      "git_blob_sha1": "a55349a133fa4033b3e5defca13da5cd5205987f",
+      "size": 384308,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/bird_disappear.fbx",
+      "git_blob_sha1": "0412afa13a3b57f5f751e3eb7bf8b30fe3eecd9a",
+      "size": 384425,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/bird_eat.fbx",
+      "git_blob_sha1": "a55a84cc568dd4b89beec86122e588bc3619a989",
+      "size": 230752,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/bird_happy.fbx",
+      "git_blob_sha1": "dc85596e74427c8a0271ad903b7bb68e1ab7ff30",
+      "size": 389577,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/bird_idle.fbx",
+      "git_blob_sha1": "f46d1126f08970a48c260903645b6fa96a5d8278",
+      "size": 364429,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/crocodile_appear.fbx",
+      "git_blob_sha1": "8e1b684af1d61034b160398cd69ca10f0293de08",
+      "size": 728462,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/crocodile_disappear.fbx",
+      "git_blob_sha1": "2340be1abfe09f36ac7ec7921c229a5a8c3ec5d7",
+      "size": 737014,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/crocodile_eat.fbx",
+      "git_blob_sha1": "2ff84487a5cd8e318a12e25a69ed0dcd55f8613c",
+      "size": 250112,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/crocodile_happy.fbx",
+      "git_blob_sha1": "0fd61d8bd3d61cc3ad377de52795bbb55a473b1c",
+      "size": 732055,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/crocodile_idle.fbx",
+      "git_blob_sha1": "1e9c486c4eb51f5de73ec0aa639d6c683eaf8f49",
+      "size": 736983,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/giraffe_appear.fbx",
+      "git_blob_sha1": "2df6568f0bcad925fe118f0ee9b10ee4e1a97d81",
+      "size": 448000,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/giraffe_disappear.fbx",
+      "git_blob_sha1": "6f7da6fe7dd0c4270f4f05e92d8daf2fe3ffc2b5",
+      "size": 449696,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/giraffe_eat.fbx",
+      "git_blob_sha1": "3c97418ad1fbfec37eaccb5a0e39c8ee425c197a",
+      "size": 443904,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/giraffe_happy.fbx",
+      "git_blob_sha1": "1f4848472562b97332ddc804572f07cdfd3f4ae9",
+      "size": 436912,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/giraffe_idle.fbx",
+      "git_blob_sha1": "86b3102607ad042480383b8896b2a43a2ce67632",
+      "size": 439392,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/hippo_appear.fbx",
+      "git_blob_sha1": "81e3f2d4bf8d9fc1313d66d7592c1b9f88914b0a",
+      "size": 256672,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/hippo_disappear.fbx",
+      "git_blob_sha1": "4b9931065edb3759cd80ff2c56c2a12d4f4dd262",
+      "size": 259216,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/hippo_eat.fbx",
+      "git_blob_sha1": "8b0a9116858a3aadb93c5162b8d179d024b2dd3b",
+      "size": 253424,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/hippo_happy.fbx",
+      "git_blob_sha1": "fcdedc39ccb4294661ebff6b65654ed512b195df",
+      "size": 241648,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/hippo_idle.fbx",
+      "git_blob_sha1": "7c07b2d5e00b6f942a796a1c7e94e8ea5d8d1a10",
+      "size": 291168,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/lady_mandrill_appear.fbx",
+      "git_blob_sha1": "5d65879fdc271bed3d8c04e2f0177dc6ccb9cd1a",
+      "size": 762607,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/lady_mandrill_disappear.fbx",
+      "git_blob_sha1": "d441a10bfd379f2182f6f38c1a2a7d98647b0a95",
+      "size": 757199,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/lady_mandrill_eat.fbx",
+      "git_blob_sha1": "bc4272d50797615b4e1bc45d93d834129e107ade",
+      "size": 762039,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/lady_mandrill_happy.fbx",
+      "git_blob_sha1": "29d59a9efc62dd7b3cd2de0518aaf45299dde6e5",
+      "size": 745908,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/anims/lady_mandrill_idle.fbx",
+      "git_blob_sha1": "85e6938398cb9232e58b5fbd11fe83399cff39fa",
+      "size": 747580,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/assets.json",
+      "git_blob_sha1": "c0be633e2f5904b22ed058125ab0d23bcf0ad3c0",
+      "size": 6954,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/config.json",
+      "git_blob_sha1": "6619533faf5f213de5d52389ca243a7ecd7eb5ae",
+      "size": 9111,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/bird_d.png",
+      "git_blob_sha1": "3a3dbbe4828294b1da70998c4d72470988587f59",
+      "size": 1291790,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/bird_rig.fbx",
+      "git_blob_sha1": "84639f713437fcc751ff6806dd03ab69ebd799ad",
+      "size": 192288,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/candy_cane.fbx",
+      "git_blob_sha1": "e99fde957a2f04ae89a343cf6acc71d693ecaee8",
+      "size": 38112,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/candy_cane.png",
+      "git_blob_sha1": "9e5ca73a3cb547daf4fc31112df1c0d18e474bc2",
+      "size": 477906,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/crocodile_d.png",
+      "git_blob_sha1": "ae7f09a59693eecc2c2d5a896fccd968ae6a396d",
+      "size": 1457236,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/crocodile_rig.fbx",
+      "git_blob_sha1": "7750c35220937b0395431c069acd1f44c8984d06",
+      "size": 221360,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/daytime_skybox.png",
+      "git_blob_sha1": "85c93a5db88a752ef3590914898ca8a6f7c89fd1",
+      "size": 1901833,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/giraffe_d.png",
+      "git_blob_sha1": "92ded95cb93b81143c942cf9f3198d97d5c95db1",
+      "size": 1121188,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/giraffe_rig.fbx",
+      "git_blob_sha1": "f691bad75ef97896715b5d1bbf6e3b63301fbdfa",
+      "size": 429600,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/hippo_d.png",
+      "git_blob_sha1": "1c0114b270c6e0314371d5258976dad62f31bfd5",
+      "size": 1574946,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/hippo_rig.fbx",
+      "git_blob_sha1": "ec56174bd2b499ea0617510e0785f33c7e1a9cd9",
+      "size": 215360,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/lady_mandrill_d.png",
+      "git_blob_sha1": "8ee891a843eab53b0ba1595485cd9b5afb82a613",
+      "size": 1397730,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/lady_mandrill_rig.fbx",
+      "git_blob_sha1": "c0b90695f91ff05d75d4771d0d54a176d358d5e9",
+      "size": 265760,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/leaf_grass_diffuse.png",
+      "git_blob_sha1": "db23b4351fa84dbaff325e99db9c23cc83be4cac",
+      "size": 6341710,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/rocks_paint.png",
+      "git_blob_sha1": "499dd25928c82a3650e3ccc4353131ec98e4bb14",
+      "size": 1530653,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/santa_hat_paint.png",
+      "git_blob_sha1": "52b4d82b444699e279f9190e7364e589facca35d",
+      "size": 857998,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/savanna_tree_01.png",
+      "git_blob_sha1": "4a1521cf77da7caf398f0be8b1b2e10293551698",
+      "size": 1915737,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/sushi_salmon.fbx",
+      "git_blob_sha1": "6faddf6b4fd87c011139b0f815c9d0f53134efd3",
+      "size": 38112,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/tree_03.fbx",
+      "git_blob_sha1": "2e71416ad499a4f77177038c311ecb2c0d376e24",
+      "size": 28080,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/tree_03.png",
+      "git_blob_sha1": "c1485e08e0830597137b584db7499978389e8bb3",
+      "size": 547587,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/tree_04.fbx",
+      "git_blob_sha1": "b30a0b9a93a97f89b935de4c98510c3b6d4c2a0e",
+      "size": 32816,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/tree_04.png",
+      "git_blob_sha1": "71e4d7cd5ba0301a3ddadd9b042decc5327a09a7",
+      "size": 499754,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/meshes/tree_saturated.png",
+      "git_blob_sha1": "0934049ca13e63467133f61e2c2e2c68166ff922",
+      "size": 301472,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/textures/grass_daytime.png",
+      "git_blob_sha1": "cb7a5a01184f88c05585439fb39a00d72a1f738d",
+      "size": 4438241,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/overlays/santa/textures/grass_daytime_bank.png",
+      "git_blob_sha1": "572824ef1a4a6115d8423de477f7db99339fff72",
+      "size": 5186115,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/rails/circle.json",
+      "git_blob_sha1": "baac537fb4cfa9ed251e7a9216e21cde69e39017",
+      "size": 266,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/rails/line_loop.json",
+      "git_blob_sha1": "2cfcfb6b5903159ade300cf6f5b74d71c282ab47",
+      "size": 239,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/rails/long_path.json",
+      "git_blob_sha1": "a889e60aab42c4545717673922a12101c72ea23d",
+      "size": 746,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/rails/player_path.json",
+      "git_blob_sha1": "7b0e98f70e13612b97a4a0214b724229ec1e523c",
+      "size": 2087,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sound_banks/sound_assets.json",
+      "git_blob_sha1": "106917614c379a8323b09408e9d4372908a1fa81",
+      "size": 1006,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/ambiance_forest.json",
+      "git_blob_sha1": "fedfaacf8a3b84498b347bac844baceecafa529c",
+      "size": 295,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/ambiance_rainforest.json",
+      "git_blob_sha1": "71710ce225f7db386b42740f31ee08e866946a34",
+      "size": 305,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/ambiance_river.json",
+      "git_blob_sha1": "2b35dad7139a128826c74933aee777dced27acf9",
+      "size": 294,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/ambiance_wind.json",
+      "git_blob_sha1": "7a2eaca4206fca8ca93e6374365d4e72ab76ed43",
+      "size": 293,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/click.json",
+      "git_blob_sha1": "7b97d96b5a6dde84c04aee97bc5814c220e81094",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/continue.json",
+      "git_blob_sha1": "11fe29900240213fbda1776d69a0d9bee0e3df9d",
+      "size": 287,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/exit.json",
+      "git_blob_sha1": "f266ae43b8d3b20640d65f7cd23abe3a07bae92b",
+      "size": 280,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/fed_bird.json",
+      "git_blob_sha1": "bbc25e04580b110cde0b525b277040a10703a921",
+      "size": 1576,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/fed_croc.json",
+      "git_blob_sha1": "8ecd5373235a3aa6e32f01542ee8ccf248ab21cd",
+      "size": 1626,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/fed_giraffe.json",
+      "git_blob_sha1": "6da56b1dde7208e1bdb98a2de075a5c029a1000b",
+      "size": 1609,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/fed_hippo.json",
+      "git_blob_sha1": "19d83dea9752135f9354078314079c30ed0e6c13",
+      "size": 1587,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/fed_lady_mandrill.json",
+      "git_blob_sha1": "d3832744b438caf0918a86955efc2f15f46ed23b",
+      "size": 1605,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/game_over.json",
+      "git_blob_sha1": "439b8658e674422cb847a70d163af92ae0ec15bd",
+      "size": 262,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/high_score.json",
+      "git_blob_sha1": "6a604c4cac666a643caf21e3f979d2af094c3b94",
+      "size": 266,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/hit_char.json",
+      "git_blob_sha1": "68325c08597669d25949b299b0da012e70691b22",
+      "size": 1555,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/hit_ground.json",
+      "git_blob_sha1": "37fb9cdb2f5d1cde37b9b42b0f4d82ffe68d9fec",
+      "size": 1577,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/hit_water.json",
+      "git_blob_sha1": "113dced4180ef9b767c39a12e96243ce34df5534",
+      "size": 1038,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/music_gameplay_lap_1.json",
+      "git_blob_sha1": "73401fd4a00b26eea6d054b6e5f562e9fb5ee685",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/music_gameplay_lap_2.json",
+      "git_blob_sha1": "4090bb4e1b3ac395e9e9a0466d104ceb8fbd650e",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/music_gameplay_lap_3.json",
+      "git_blob_sha1": "f2c7dee08b85287f3a3f629dde48c5c8f1a36205",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/music_menu.json",
+      "git_blob_sha1": "ae501ba0abe5fe4552dfe17f6798050ed4e64494",
+      "size": 268,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/pause.json",
+      "git_blob_sha1": "ade1ccecfce7c828be06412cfdaba303e8d85428",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/select.json",
+      "git_blob_sha1": "6d184b3c0424fe3a912a8bfda2a32b6bbb901319",
+      "size": 283,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/start.json",
+      "git_blob_sha1": "59d12a1726789ca7ddf62cca60a80ecd2379341a",
+      "size": 281,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/successful_lap.json",
+      "git_blob_sha1": "6629d9769814ccf10e7f295b7b3d43ebef4259c0",
+      "size": 290,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/sushi_whoosh.json",
+      "git_blob_sha1": "968777bc49e28f9163c231097d79830e8b821ced",
+      "size": 287,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/throw.json",
+      "git_blob_sha1": "32df39c592812416215a263221a77eac16195e2d",
+      "size": 1533,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/sounds/unsuccessful_lap.json",
+      "git_blob_sha1": "17f09a57075834041d708233deaa2d8f9b844e9d",
+      "size": 292,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/cardboard_logo.png",
+      "git_blob_sha1": "72a395e6173870d05e82e33e0693bb822b487bdd",
+      "size": 1339,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/games_achievements_green.png",
+      "git_blob_sha1": "2902275c7838fd760071cfee7a6634f34aad5748",
+      "size": 15205,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/games_controller.png",
+      "git_blob_sha1": "5e142159631414d718e69cd249323b0965f1d7f7",
+      "size": 12729,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/games_leaderboards_green.png",
+      "git_blob_sha1": "afc3330e1a5229f4a713bae9a57ff98798aaf755",
+      "size": 10825,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/gate_closed_icon.png",
+      "git_blob_sha1": "e1526435b8c712b0cf573a029c52be335c060e62",
+      "size": 27425,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/gate_open_icon.png",
+      "git_blob_sha1": "61575de158b28a0403fcc36ad538317df10458fd",
+      "size": 21621,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_daytime.png",
+      "git_blob_sha1": "e6882579cc4f8475705277c82bcccbcdf09593bd",
+      "size": 687768,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_daytime_bank.png",
+      "git_blob_sha1": "dc2ff9c04ef99181f94568aa51ea5714219bb5a1",
+      "size": 752152,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_sunset.png",
+      "git_blob_sha1": "f03a73336014f523421a508b25c99a34e55bc532",
+      "size": 648286,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_sunset_bank.png",
+      "git_blob_sha1": "3d2631640aac80741984ddbaf2172a309649981e",
+      "size": 752090,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_twilight.png",
+      "git_blob_sha1": "2c120ad260ed7ece3c868b7f5d725e8a172717fa",
+      "size": 771847,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/grass_twilight_bank.png",
+      "git_blob_sha1": "e6eb43713d40f565f59b0759699450938a5106d1",
+      "size": 781762,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/heart_raft_sign.png",
+      "git_blob_sha1": "b7ab63d70047a99d81ed5ecc1bfea9d5aab3f9a5",
+      "size": 355351,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/joystick_base.png",
+      "git_blob_sha1": "9d38bc144c5138d883fcd05b631bb18b2dd7711d",
+      "size": 77438,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/joystick_tip.png",
+      "git_blob_sha1": "72e1d845d51e5e3c470b5a3baf04430113443d84",
+      "size": 30734,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/lake_daytime.png",
+      "git_blob_sha1": "e542d9ffc69d0eda2bbccb910957c979596c6d98",
+      "size": 896244,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/loading.png",
+      "git_blob_sha1": "270cddb273f70c34aabd2eb5be6334b7d445e0c8",
+      "size": 498669,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/pixel_1x1.png",
+      "git_blob_sha1": "8d72055f611a47ce32f78170ec6d43abb54d0e3a",
+      "size": 159,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_daytime.png",
+      "git_blob_sha1": "9f3a66d135ef5d464685e09155b0066f409b6dec",
+      "size": 620579,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_daytime_bank.png",
+      "git_blob_sha1": "f7789cd468ae518d7ff70391dc66d0faf3cf5c74",
+      "size": 651497,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_sunset.png",
+      "git_blob_sha1": "639021c26ef71c593eea49c3643c7554b24d80b0",
+      "size": 481653,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_sunset_bank.png",
+      "git_blob_sha1": "5e11c4236ac05fe575650cc96e107f252c34e938",
+      "size": 543792,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_twilight.png",
+      "git_blob_sha1": "5e0dfba123857061cadffa9f2e9f8883520a8268",
+      "size": 653274,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/savanna_twilight_bank.png",
+      "git_blob_sha1": "f44e8b5485c39ed5e22a6cac9add93590f14c5f1",
+      "size": 668897,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/settings_gear.png",
+      "git_blob_sha1": "720001e8f77e2f48dee2ae8988c0a41785336c36",
+      "size": 509,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_background_base.png",
+      "git_blob_sha1": "746c38600e6c55892a33e7dc45b3bb12c05f0023",
+      "size": 1907907,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "src/rawassets/textures/ui_background_main.png",
+      "git_blob_sha1": "ddd23e6fa982bc2f85265bc0b411decedafe6f02",
+      "size": 1890004,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "src/rawassets/textures/ui_button_back.png",
+      "git_blob_sha1": "88d070ece9a31d29a7dc9701b94c9cf8070828f8",
+      "size": 27002,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_button_checked.png",
+      "git_blob_sha1": "374242ba3894d77f34ed699d82b6670ce98ef604",
+      "size": 11123,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_button_ok.png",
+      "git_blob_sha1": "e46432b3e930a27ba953370e72e36bbfead4650b",
+      "size": 39929,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_button_unchecked.png",
+      "git_blob_sha1": "7ea735d811b8742501d199ad807086ac81f31d19",
+      "size": 2926,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_scrollbar_background.png",
+      "git_blob_sha1": "09acf5e1e6ce2a99217f43c92a1220bd368cc75c",
+      "size": 683,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "src/rawassets/textures/ui_scrollbar_background_on.png",
+      "git_blob_sha1": "305250492f892a0d102845dd950030a68186ce4e",
+      "size": 638,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "src/rawassets/textures/ui_scrollbar_background_vertical.png",
+      "git_blob_sha1": "166827f7887194f814a12249ce55092677af7979",
+      "size": 3066,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_scrollbar_foreground.png",
+      "git_blob_sha1": "feaaea000ba72b60a9bc5bb11e4720aa74ccd6a4",
+      "size": 3444,
+      "storage": "external",
+      "mode": "100644"
+    },
+    {
+      "path": "src/rawassets/textures/ui_scrollbar_knob.png",
+      "git_blob_sha1": "0f855b16d1dfdebcb6bcb80dde2e3a59765d1bd6",
+      "size": 2366,
+      "storage": "external",
+      "mode": "100755"
+    },
+    {
+      "path": "src/remote_config.cpp",
+      "git_blob_sha1": "a7387f887f92cef0766d4a4850fa6542e9f6c2e1",
+      "size": 2265,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/remote_config.h",
+      "git_blob_sha1": "07cd5e41ce661b32d449bfa7282c839954dcc9fe",
+      "size": 1135,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/game_menu_state.cpp",
+      "git_blob_sha1": "f0ecb2cd8a6852cdb2218c65ba385950ba03c083",
+      "size": 18295,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/game_menu_state.h",
+      "git_blob_sha1": "5ceefa0c1fa39582141f678b1e5fd7f7d917c88b",
+      "size": 11174,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/game_over_state.cpp",
+      "git_blob_sha1": "d5a338c6eb683dbc492c236b88037d826e594cbd",
+      "size": 7247,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/game_over_state.h",
+      "git_blob_sha1": "f72d3722e98163cc4e46c3b4fd3adcdccf48e089",
+      "size": 2656,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/gameplay_state.cpp",
+      "git_blob_sha1": "8339d779d9654456e835f85858afba724a50f1bb",
+      "size": 8957,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/gameplay_state.h",
+      "git_blob_sha1": "f073b1291d2acc6f2548045b867cc5fe054641d3",
+      "size": 3280,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/intro_state.cpp",
+      "git_blob_sha1": "cd79159fc4cacbae222fe3b1fc911f0ec89739b9",
+      "size": 5170,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/intro_state.h",
+      "git_blob_sha1": "fd8b5fe3afd737babd257b31618a20972428c48b",
+      "size": 2448,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/loading_state.cpp",
+      "git_blob_sha1": "e0d86f98b5959161c09492eecf53ab3f8b9ffad1",
+      "size": 8240,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/loading_state.h",
+      "git_blob_sha1": "ede6a3459b5b40be1c73681a205907e2ad19ece4",
+      "size": 2716,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/pause_state.cpp",
+      "git_blob_sha1": "28538f1062105c5fd0f3e997ca49cc436309af7e",
+      "size": 4734,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/pause_state.h",
+      "git_blob_sha1": "910b9432b67e8755b6a05a4d95d37457a8252b15",
+      "size": 2654,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/scene_lab_state.cpp",
+      "git_blob_sha1": "bd7844d4abb95043fc0fcda8514b661f6f3daa2f",
+      "size": 3576,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/scene_lab_state.h",
+      "git_blob_sha1": "a13fd9d61b743b0d28e6a0c86e0bcb91ba8990a0",
+      "size": 1898,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/state_machine.h",
+      "git_blob_sha1": "ae0efb3ab99229fb33b6841ac617e7f2bf5ce510",
+      "size": 3303,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/states.h",
+      "git_blob_sha1": "e928b8f0d0cc85b07f448eed29acfff599342e19",
+      "size": 968,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/states_common.cpp",
+      "git_blob_sha1": "c8356ef3fd15535f56ef48804e01df567264a327",
+      "size": 5518,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/states/states_common.h",
+      "git_blob_sha1": "b167a93f5db6f06219b4e81825aed5f25342ccd6",
+      "size": 1238,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/unlockable_manager.cpp",
+      "git_blob_sha1": "7eadf8b54c3a5195529fb2bc4adf434272077555",
+      "size": 4021,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/unlockable_manager.h",
+      "git_blob_sha1": "1551091b751be11a361872f02fa6e4fccaed8e2a",
+      "size": 2848,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/world.cpp",
+      "git_blob_sha1": "a10830fad0fbfc9e39a4dc434bdf60f502de6712",
+      "size": 13212,
+      "storage": "tracked",
+      "mode": "100755"
+    },
+    {
+      "path": "src/world.h",
+      "git_blob_sha1": "105b72a355c9ed14e690cc0192da91d0f43b3110",
+      "size": 10082,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/world_renderer.cpp",
+      "git_blob_sha1": "47a30e34e62ed2aef8cd0f5d3e10848dbd47b6f2",
+      "size": 11119,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/world_renderer.h",
+      "git_blob_sha1": "fa1ac29a57f7350dd6e1715fe0e379ecd0b7167c",
+      "size": 2693,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/xp_system.cpp",
+      "git_blob_sha1": "abeaf68d800b961f980618a5f63fa4e267fc704e",
+      "size": 2540,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src/xp_system.h",
+      "git_blob_sha1": "a41ed0e3d9952a3234f49cb2c6ca6c45b70857ce",
+      "size": 2731,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src_java/com/google/fpl/zooshi/ZooshiActivity.java",
+      "git_blob_sha1": "6410432d76e160cfc9f6107af507cbd5e9061d3d",
+      "size": 1220,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src_java/com/google/fpl/zooshi/ZooshiHmdActivity.java",
+      "git_blob_sha1": "30f7103140261c834df1e13e3ea8e8e8956d3106",
+      "size": 798,
+      "storage": "tracked",
+      "mode": "100644"
+    },
+    {
+      "path": "src_java/com/google/fpl/zooshi/ZooshiTvActivity.java",
+      "git_blob_sha1": "aeb492dcef2fd1a6e151eaa09ded02e613d05739",
+      "size": 785,
+      "storage": "tracked",
+      "mode": "100644"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "dependencies/breadboard",
+      "url": "http://github.com/google/breadboard.git",
+      "commit": "7b2dae9860cbb9cc3824faee0412be1457fbab86"
+    },
+    {
+      "path": "dependencies/bulletphysics",
+      "url": "http://github.com/bulletphysics/bullet3.git",
+      "commit": "30ebb322285809bde98959e10e73e5acb9981efc"
+    },
+    {
+      "path": "dependencies/cardboard-java",
+      "url": "https://github.com/googlesamples/cardboard-java",
+      "commit": "1363a04a01f9fb4ed824c15ef9fb5d33da18883d"
+    },
+    {
+      "path": "dependencies/corgi",
+      "url": "http://github.com/google/corgi.git",
+      "commit": "08945fc34da5708dc650191e5c98ef4a2dda5215"
+    },
+    {
+      "path": "dependencies/flatbuffers",
+      "url": "http://github.com/google/flatbuffers.git",
+      "commit": "bb223da2583dc2a9ec005bae6ade265197fb96f5"
+    },
+    {
+      "path": "dependencies/flatui",
+      "url": "http://github.com/google/flatui.git",
+      "commit": "e529e9f25a94c1ac9a1893d4c7f1fe056ecac057"
+    },
+    {
+      "path": "dependencies/fplbase",
+      "url": "http://github.com/google/fplbase.git",
+      "commit": "8f95f31f1d8d58e57e945d781df9dd8b6fdbec31"
+    },
+    {
+      "path": "dependencies/fplutil",
+      "url": "http://github.com/google/fplutil.git",
+      "commit": "7c0550935ee6f57f6f410bb0ef268a1ee71422e2"
+    },
+    {
+      "path": "dependencies/freetype",
+      "url": "git://git.sv.nongnu.org/freetype/freetype2.git",
+      "commit": "f353a38e87a894a0a3280f5e27278831a1a2aaad"
+    },
+    {
+      "path": "dependencies/googletest",
+      "url": "http://github.com/google/googletest.git",
+      "commit": "13206d6f53aaff844f2d3595a01ac83a29e383db"
+    },
+    {
+      "path": "dependencies/gumbo-parser",
+      "url": "https://github.com/google/gumbo-parser",
+      "commit": "aa91b27b02c0c80c482e24348a457ed7c3c088e0"
+    },
+    {
+      "path": "dependencies/harfbuzz",
+      "url": "http://github.com/behdad/harfbuzz.git",
+      "commit": "aee685086c8fde6f6c4590e483a177c19f222540"
+    },
+    {
+      "path": "dependencies/hyphenation-patterns",
+      "url": "https://android.googlesource.com/platform/external/hyphenation-patterns",
+      "commit": "dedeff64279b77bafff72b6d866efc93e829b4ab"
+    },
+    {
+      "path": "dependencies/libogg",
+      "url": "https://git.xiph.org/mirrors/ogg.git",
+      "commit": "ab78196fd59ad7a329a2b19d2bcec5d840a9a21f"
+    },
+    {
+      "path": "dependencies/libunibreak",
+      "url": "https://github.com/adah1972/libunibreak.git",
+      "commit": "0e8e32dcd0d8f9d2744026bef591b16af1ddd0ff"
+    },
+    {
+      "path": "dependencies/libvorbis",
+      "url": "https://git.xiph.org/mirrors/vorbis.git",
+      "commit": "ec345eee8c5af00154b237f67509c96b43cfa8a7"
+    },
+    {
+      "path": "dependencies/mathfu",
+      "url": "http://github.com/google/mathfu.git",
+      "commit": "20081fbc2ef19ae19bbc7916f325e6a78709fd4f"
+    },
+    {
+      "path": "dependencies/motive",
+      "url": "http://github.com/google/motive.git",
+      "commit": "e312290704bc6922c823770578ab8b9dddd05975"
+    },
+    {
+      "path": "dependencies/pindrop",
+      "url": "http://github.com/google/pindrop.git",
+      "commit": "8b6bd85a7f40476695bbaa761c6d11c11b453274"
+    },
+    {
+      "path": "dependencies/scene_lab",
+      "url": "http://github.com/google/scene_lab.git",
+      "commit": "5e8d3581346e358b5da03e8073ea09091401365c"
+    },
+    {
+      "path": "dependencies/sdl",
+      "url": "http://github.com/google/fplbase.git",
+      "commit": "b7804de255917316940a7c3a81799efa6e8aa354"
+    },
+    {
+      "path": "dependencies/sdl_mixer",
+      "url": "http://github.com/google/pindrop.git",
+      "commit": "c156ca212dbf28c0246eece7b9948dc99eed4e7f"
+    },
+    {
+      "path": "dependencies/stb",
+      "url": "https://github.com/nothings/stb.git",
+      "commit": "c9ead07188b342350530e92e14542222c3ad9abe"
+    },
+    {
+      "path": "dependencies/vectorial",
+      "url": "http://github.com/scoopr/vectorial.git",
+      "commit": "ae7dc88215e14c812786dc7a1f214610ae8540f5"
+    },
+    {
+      "path": "dependencies/webp",
+      "url": "https://chromium.googlesource.com/webm/libwebp",
+      "commit": "8af2771813632e2007988c8df6ad7e68b28ad121"
+    }
+  ]
+}

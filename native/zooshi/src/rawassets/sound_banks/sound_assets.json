@@ -1,0 +1,32 @@
+{
+  "filenames": [
+    "sounds/ambiance_forest.pinsound",
+    "sounds/ambiance_rainforest.pinsound",
+    "sounds/ambiance_river.pinsound",
+    "sounds/ambiance_wind.pinsound",
+    "sounds/click.pinsound",
+    "sounds/continue.pinsound",
+    "sounds/exit.pinsound",
+    "sounds/fed_bird.pinsound",
+    "sounds/fed_croc.pinsound",
+    "sounds/fed_giraffe.pinsound",
+    "sounds/fed_hippo.pinsound",
+    "sounds/fed_lady_mandrill.pinsound",
+    "sounds/game_over.pinsound",
+    "sounds/high_score.pinsound",
+    "sounds/hit_char.pinsound",
+    "sounds/hit_ground.pinsound",
+    "sounds/hit_water.pinsound",
+    "sounds/music_gameplay_lap_1.pinsound",
+    "sounds/music_gameplay_lap_2.pinsound",
+    "sounds/music_gameplay_lap_3.pinsound",
+    "sounds/music_menu.pinsound",
+    "sounds/pause.pinsound",
+    "sounds/select.pinsound",
+    "sounds/start.pinsound",
+    "sounds/successful_lap.pinsound",
+    "sounds/sushi_whoosh.pinsound",
+    "sounds/throw.pinsound",
+    "sounds/unsuccessful_lap.pinsound"
+  ]
+}

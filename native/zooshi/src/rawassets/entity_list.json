@@ -1,0 +1,118 @@
+{
+  "entity_list": [
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "introbox-1",
+            "prototype": "IntroBox"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 50,
+              "z": 500
+            },
+            "scale": {
+              "x": 5,
+              "y": 5,
+              "z": 5
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$cc7c-d763-692e-7717",
+            "prototype": "Ground"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "CycleOnly",
+            "render_option": "OnlyInEditor"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0.1
+            },
+            "scale": {
+              "x": 250,
+              "y": 250,
+              "z": 1
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$e514-e986-46bc-4253",
+            "prototype": "SkyBox"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 500,
+              "y": 500,
+              "z": 500
+            },
+            "orientation": {
+              "x": 0,
+              "y": -0,
+              "z": 0
+            },
+            "child_ids": [
+              "SkyBox_RenderMesh"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "$559e-aa73-14c2-022a",
+            "prototype": "GroundPhysics"
+          }
+        }
+      ]
+    }
+  ]
+}

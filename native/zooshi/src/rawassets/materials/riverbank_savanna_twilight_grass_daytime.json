@@ -1,0 +1,6 @@
+{
+  texture_filenames: [
+    "textures/savanna_twilight_bank.webp",
+    "textures/grass_daytime_bank.webp",
+  ]
+}

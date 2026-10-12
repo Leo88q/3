@@ -1,0 +1,106 @@
+{
+  "node_list": [
+    {
+      "module": "debug",
+      "name": "console_print",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_Pulse"
+        },
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 5,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "module": "zooshi",
+      "name": "player_entity",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_Pulse"
+        }
+      ]
+    },
+    {
+      "module": "attributes",
+      "name": "attributes",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 1,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "module": "attributes",
+      "name": "get_attribute",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 2,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_Int",
+          "edge": {
+            "value": 1
+          }
+        }
+      ]
+    },
+    {
+      "module": "string",
+      "name": "float_to_string",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 3,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "module": "string",
+      "name": "concat",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_String",
+          "edge": {
+            "value": "Attrib: "
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 4,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      "module": "string",
+      "name": "float_to_string",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 3,
+            "edge_index": 0
+          }
+        }
+      ]
+    }
+  ]
+}

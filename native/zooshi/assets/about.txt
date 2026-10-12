@@ -1,0 +1,20 @@
+Noriwake — native development fork, not a release build.
+
+Your floating kitchen brings warm dinners to a city of waterways.
+Start at the old pier, deliver 25 meals, and light the night market.
+At 100 deliveries, recover a page from Grandma's missing recipe book.
+These are story milestones; the new city artwork is still in development.
+
+Choose a 90-second run or the original Classic mode in Options.
+Local records are saved on this device. No wallet or NFT rewards yet.
+
+Based on Zooshi by Google Inc., licensed under Apache 2.0.
+Original gameplay and temporary art are retained; no endorsement is implied.
+See Licenses for original third-party notices and Apache 2.0.
+
+Original Zooshi description (preserved below):
+Can you toss sushi to feed hungry—but elegantly dressed!—jungle animals?
+
+Aim at their mouths, and be sure to feed your quota each time around the river, before you pass through the gate.
+
+Sling Sushi Swiftly!

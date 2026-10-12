@@ -1,0 +1,3835 @@
+{
+  "entity_list": [
+    // Ambiance entities.
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "AmbianceForest"
+          }
+        },
+        {
+          "data_type": "SoundDef",
+          "data": {
+            "sound": "ambiance_forest"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "AmbianceRainforest"
+          }
+        },
+        {
+          "data_type": "SoundDef",
+          "data": {
+            "sound": "ambiance_rainforest"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "AmbianceRiver"
+          }
+        },
+        {
+          "data_type": "SoundDef",
+          "data": {
+            "sound": "ambiance_river"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "AmbianceWind"
+          }
+        },
+        {
+          "data_type": "SoundDef",
+          "data": {
+            "sound": "ambiance_wind"
+          }
+        }
+      ]
+    },
+
+
+    // All render meshes should use this as a prototype.
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "CycleOnly"
+          }
+        }
+      ]
+    },
+
+
+    // River rail
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RiverRail"
+          }
+        },
+        {
+          "data_type": "RailDenizenDef",
+          "data" : {
+            "start_time": 0,
+            "rail_name" : "player_path",
+            "orientation_convergence_rate": 3
+          }
+        }
+      ]
+    },
+
+
+    // Raft
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Raft"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.0,
+              "y": 2.0,
+              "z": -1.7
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 0.8,
+              "z": 0.8
+            },
+            "child_ids": [
+              "Sign",
+              "RaftShrimp",
+              "RaftSalmon",
+              "EndBankerBird",
+              "EndHungryHippo",
+              "EndLadyMandrill",
+              "EndMoustacheCroc",
+              "EndLovelyGiraffette"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 4,
+                    "y": 5,
+                    "z": 0.2
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.3
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file": "meshes/raft.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Raft without Sign
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Raft_Signless"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.0,
+              "y": 2.0,
+              "z": -1.7
+            },
+            "scale": {
+              "x": 0.8,
+              "y": 0.8,
+              "z": 0.8
+            },
+            "child_ids": [
+              "RaftShrimp",
+              "RaftSalmon",
+              "EndBankerBird",
+              "EndHungryHippo",
+              "EndLadyMandrill",
+              "EndMoustacheCroc",
+              "EndLovelyGiraffette"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 4,
+                    "y": 5,
+                    "z": 0.2
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.3
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file": "meshes/raft.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Intro Box
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "IntroBox"
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file": "meshes/introbox.fplmesh",
+            "shaders": [
+              "shaders/textured_opaque",
+              "shaders/textured_opaque"
+            ],
+            "culling": ["Distance"],
+            "visible": false
+          }
+        }
+      ]
+    },
+
+    // Raft Shrimp
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RaftShrimp"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -1.7, "y": 1.7, "z": 0.5 },
+            "scale": { "x": 200, "y": 200, "z": 200 },
+            "orientation": { "x": 0, "y": 0, "z": -45 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/sushi_shrimp.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Raft Salmon
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RaftSalmon"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -1.4, "y": 2.8, "z": 0.5 },
+            "scale": { "x": 200, "y": 200, "z": 200 },
+            "orientation": { "x": 0, "y": 15, "z": 0 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/sushi_salmon.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Sign
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Sign"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 2.5,
+              "y": 3.7,
+              "z": 0.31
+            },
+            "scale": {
+              "x": 3.0,
+              "y": 3.0,
+              "z": 3.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 5.0,
+              "z": 45.0
+            },
+            "child_ids": [
+              "ScoreBoard"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/raft_sign.fplmesh",
+            "shaders": [
+              "shaders/textured_lit"
+            ],
+            "render_pass" : ["Alpha"]
+          }
+        }
+      ]
+    },
+
+    // Score Board
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "ScoreBoard"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": -0.42,
+              "y": 0,
+              "z": 0.515
+            },
+            "scale": {
+              "x": 0.115,
+              "y": 0.1,
+              "z": 0.3
+            },
+            "orientation": {
+              "x": 0,
+              "y": 2,
+              "z": -180
+            },
+            "child_ids": [
+              "HeartMeterLine",
+              "GateClosedIcon",
+              "GateOpenIcon",
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data": {
+            "filename_list": [
+              "graphs/score_board.bbgraph"
+            ]
+          }
+        }
+      ]
+    },
+
+    // Heart Meter Line
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "HeartMeterLine"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 1,
+              "y": 0.5,
+              "z": 1
+            },
+            "child_ids": [
+              "HeartIcon"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/heart_meter_line.fplmesh",
+            "shaders": [
+              "shaders/textured"
+            ],
+            "render_pass" : ["Alpha"]
+          }
+        }
+      ]
+    },
+
+    // Heart Icon
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "HeartIcon"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": -5.5,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 2,
+              "z": 0.3
+            },
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/heart.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass" : ["Alpha"]
+          }
+        }
+      ]
+    },
+
+    // Gate Closed Icon
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GateClosedIcon"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": -6.9,
+              "y": 0.1,
+              "z": -0.29
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 1,
+              "z": 0.575
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": 180
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/gate_closed_icon.fplmesh",
+            "shaders": [
+              "shaders/textured"
+            ],
+            "render_pass" : ["Alpha"]
+          }
+        }
+      ]
+    },
+
+    // Gate Open Icon
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GateOpenIcon"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": -6.9,
+              "y": 0.1,
+              "z": -0.29
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 1,
+              "z": 0.575
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": 180
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/gate_open_icon.fplmesh",
+            "shaders": [
+              "shaders/textured"
+            ],
+            "render_pass" : ["Alpha"]
+          }
+        }
+      ]
+    },
+
+    // RailNode
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RailNode"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "render_option": "OnlyInEditor"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {"x":20,"y":20,"z":20}
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/sushi_salmon.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"],
+            "visible": false
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.03,
+                    "y": 0.016,
+                    "z": 0.016
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.016,
+                  "z": 0.0
+                },
+                "mass": 100.0,
+                "restitution": 1.0,
+                "collision_type": "Raycast",
+                "collides_with": [
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    // Ground physics
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GroundPhysics"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "CycleOnly"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.5
+            }
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletStaticPlaneDef",
+                "data": {
+                  "normal": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                  },
+                  "constant": 0
+                },
+                "mass": 0,
+                "restitution": 1.0,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile"
+                ],
+                "user_tag": "Water"
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    // PlayerPrototype
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PlayerPrototype"
+          }
+        },
+        {
+          "data_type": "PlayerDef",
+          "data": {}
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "child_ids" : [
+              "AmbianceForest",
+              "AmbianceRiver",
+              "AmbianceWind",
+              "PlayerPrototype_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/new_lap.bbgraph",
+              "graphs/on_fire.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "ListenerDef",
+          "data" : {}
+        },
+        {
+          "data_type": "AttributesDef",
+          "data" : {}
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PlayerPrototype_Single",
+            "prototype": "PlayerPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/single_lap.bbgraph",
+              "graphs/on_fire.bbgraph"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PlayerPrototype_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 5.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          }
+        }
+      ]
+    },
+
+    // Lady Mandrill
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronLadyMandrill"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "child_ids": [ "PatronLadyMandrill_RenderMesh"]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.2,
+                    "y": 0.6,
+                    "z": 1.5
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 1.5
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.0,
+                    "y": 0.6,
+                    "z": 1.3
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 4.3
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.7,
+                    "y": 0.3,
+                    "z": 0.5
+                  }
+                },
+                "offset": {
+                  "x": 0.15,
+                  "y": 0.9,
+                  "z": 4.2
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/mandrill.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "LadyMandrill",
+            "pop_in_radius": {
+              "start_value": 40, "start_time": 0, "end_value": 30, "end_time": 2
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 6.5,
+            "max_face_angle_away_from_raft": 30,
+            "time_to_face_raft": 0.4,
+            "time_exasperated_before_disappearing": 1.5,
+            "exasperated_playback_rate": 2.0,
+            "min_lap": 0.01,
+            "max_lap": -1,
+            "patience": {
+              "start_value": 5, "start_time": 0, "end_value": 2, "end_time": 2
+            },
+            "target_tag": "Mouth",
+            "max_catch_distance": 5.0,
+            "max_catch_distance_for_search": 12.0,
+            "max_catch_angle": 120.0,
+            "min_catch_time_for_search": 0.01,
+            "max_catch_time_for_search": 4.0,
+            "min_catch_time": 0.5,
+            "max_catch_time": 4.0,
+            "min_catch_speed": 1.5,
+            "max_catch_speed": 3.0,
+            "time_between_catch_searches": 0.6,
+            "return_time": 2.0,
+            "play_eating_animation": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronLadyMandrill_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 3.0,
+              "y": 3.0,
+              "z": 3.0
+            },
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/lady_mandrill_rig.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass" : ["Opaque"],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Dapper Croc
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronMoustacheCroc"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "child_ids": [ "PatronMoustacheCroc_RenderMesh"]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.9,
+                    "y": 0.4,
+                    "z": 2.5
+                  }
+                },
+                "offset": {
+                  "x": -0.4,
+                  "y": 0.2,
+                  "z": 3
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.2,
+                    "y": 0.7,
+                    "z": 0.7
+                  }
+                },
+                "offset": {
+                  "x": -0.8,
+                  "y": 0.7,
+                  "z": 3.4
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/croc.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "DapperCroc",
+            "pop_in_radius": {
+              "start_value": 50, "start_time": 1, "end_value": 30, "end_time": 3
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 6.5,
+            "max_face_angle_away_from_raft": 25,
+            "time_to_face_raft": 0.2,
+            "time_exasperated_before_disappearing": 1.0,
+            "exasperated_playback_rate": 2.0,
+            "min_lap": 0.01,
+            "max_lap": -1,
+            "patience": {
+              "start_value": 10, "start_time": 1, "end_value": 3, "end_time": 3
+            },
+            "target_tag": "Mouth",
+            "max_catch_distance": 5.0,
+            "max_catch_distance_for_search": 15.0,
+            "max_catch_angle": 100.0,
+            "min_catch_time_for_search": 0.01,
+            "max_catch_time_for_search": 2.0,
+            "min_catch_time": 0.15,
+            "max_catch_time": 0.4,
+            "min_catch_speed": 8.0,
+            "max_catch_speed": 15.0,
+            "time_between_catch_searches": 0.2,
+            "return_time": 0.5,
+            "play_eating_animation": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id" : "PatronMoustacheCroc_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 0.01,
+              "y": 0.01,
+              "z": 0.01
+            },
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": -54.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/crocodile_rig.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass": ["Opaque"],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Hungry Hippo
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronHungryHippo"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "child_ids": [ "PatronHungryHippo_RenderMesh"]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.6,
+                    "y": 1.2,
+                    "z": 1.4
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": 0.2,
+                  "z": 1.75
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.6,
+                    "y": 0.4,
+                    "z": 1.1
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": -0.6,
+                  "z": 4.2
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.2,
+                    "y": 1.0,
+                    "z": 0.725
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": 0.6,
+                  "z": 4.0
+                },
+                "mass": 10.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/hippo.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "HungryHippo",
+            "pop_in_radius": {
+              "start_value": 50, "start_time": 2, "end_value": 30, "end_time": 4
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 6.5,
+            "max_face_angle_away_from_raft": 40,
+            "time_to_face_raft": 1.2,
+            "time_exasperated_before_disappearing": 2.0,
+            "exasperated_playback_rate": 2.3,
+            "min_lap": 0.01,
+            "max_lap": -1,
+            "patience": {
+              "start_value": 11, "start_time": 2, "end_value": 3, "end_time": 4
+            },
+            "target_tag": "Mouth",
+            "max_catch_distance": 5.0,
+            "max_catch_distance_for_search": 12.0,
+            "max_catch_angle": 90.0,
+            "min_catch_time_for_search": 0.01,
+            "max_catch_time_for_search": 2.5,
+            "min_catch_time": 0.2,
+            "max_catch_time": 2.5,
+            "min_catch_speed": 1.0,
+            "max_catch_speed": 5.0,
+            "time_between_catch_searches": 0.4,
+            "return_time": 1.0,
+            "play_eating_animation": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id" : "PatronHungryHippo_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            },
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/hippo_rig.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass": ["Opaque"],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronHungryHippo_First",
+            "prototype": "PatronHungryHippo"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.6,
+                    "y": 1.2,
+                    "z": 1.4
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": 0.2,
+                  "z": 1.75
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.6,
+                    "y": 0.4,
+                    "z": 1.1
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": -0.6,
+                  "z": 4.2
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.2,
+                    "y": 1.0,
+                    "z": 0.825
+                  }
+                },
+                "offset": {
+                  "x": 0.1,
+                  "y": 0.6,
+                  "z": 4.0
+                },
+                "mass": 10.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/first_hippo.bbgraph",
+              "graphs/hippo.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "HungryHippo",
+            "pop_in_radius": {
+              "start_value": 50, "start_time": 0, "end_value": 50, "end_time": 4
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 6.5,
+            "max_face_angle_away_from_raft": 180,
+            "time_to_face_raft": 1.0,
+            "min_lap": 0,
+            "max_lap": 0,
+            "patience": {
+              "start_value": 100000, "start_time": 0, "end_value": 100000, "end_time": 1
+            },
+            "max_catch_distance": 2.5,
+            "max_catch_distance_for_search": 12.0,
+            "max_catch_angle": 40.0,
+            "min_catch_time_for_search": 0.01,
+            "max_catch_time_for_search": 2.5,
+            "min_catch_time": 0.2,
+            "max_catch_time": 2.5,
+            "min_catch_speed": 1.0,
+            "max_catch_speed": 5.0,
+            "time_between_catch_searches": 0.4,
+            "return_time": 1.0,
+            "play_eating_animation": true
+          }
+        }
+      ]
+    },
+
+    // Banker Bird
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronBankerBirdNoRail"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "child_ids": [ "PatronBankerBird_RenderMesh"]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.6,
+                    "y": 1.2,
+                    "z": 1
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 1
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/bird.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "BankerBird",
+            "pop_in_radius": {
+              "start_value": 50, "start_time": 1, "end_value": 30, "end_time": 4
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 3,
+            "max_face_angle_away_from_raft": 180,
+            "time_to_face_raft": 1.0,
+            "time_exasperated_before_disappearing": 2.0,
+            "exasperated_playback_rate": 2.5,
+            "min_lap": 0.01,
+            "max_lap": -1,
+            "patience": {
+              "start_value": 6, "start_time": 1, "end_value": 2, "end_time": 3
+            },
+            "max_catch_distance": 3.0,
+            "max_catch_distance_for_search": 10.0,
+            "max_catch_angle": 140.0,
+            "min_catch_time_for_search": 0.1,
+            "max_catch_time_for_search": 4.0,
+            "min_catch_time": 0.1,
+            "max_catch_time": 4.0,
+            "min_catch_speed": 5.0,
+            "max_catch_speed": 8.0,
+            "time_between_catch_searches": 0.3,
+            "return_time": 1.0,
+            "play_eating_animation": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronBankerBird",
+            "prototype": "PatronBankerBirdNoRail"
+          }
+        },
+        {
+          "data_type": "RailDenizenDef",
+          "data" : {
+            "start_time": 0,
+            "rail_name" : "bird_loop",
+            "initial_playback_rate": 0.75,
+            "update_orientation": true,
+            "inherit_transform_data": true,
+            "rail_scale": { "x": 5, "y": 5, "z": 5 }
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id" : "PatronBankerBird_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 0.5,
+              "y": 0.5,
+              "z": 0.5
+            },
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/bird_rig.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass": ["Opaque"],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Giraffette
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "PatronGiraffette"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "child_ids": [ "PatronGiraffette_RenderMesh"]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.7,
+                    "y": 0.9,
+                    "z": 2.1
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 2.1
+                },
+                "mass": 100.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.2,
+                    "y": 0.2,
+                    "z": 1.5
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.7,
+                  "z": 5.6
+                },
+                "mass": 20.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Body"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.9,
+                    "y": 0.9,
+                    "z": 1.8
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 1.1,
+                  "z": 8.6
+                },
+                "mass": 20.0,
+                "restitution": 0.3,
+                "collision_type": "Patron",
+                "collides_with": [
+                  "Raycast",
+                  "Projectile"
+                ],
+                "user_tag": "Mouth"
+              }
+            ],
+            "kinematic": true
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/giraffe.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "LovelyGiraffette",
+            "pop_in_radius": {
+              "start_value": 42, "start_time": 0, "end_value": 30, "end_time": 3
+            },
+            "pop_out_radius": 60,
+            "point_display_height": 11,
+            "max_face_angle_away_from_raft": 30,
+            "time_to_face_raft": 0.4,
+            "time_exasperated_before_disappearing": 1.2,
+            "exasperated_playback_rate": 1.8,
+            "min_lap": 0.01,
+            "max_lap": -1,
+            "patience": {
+              "start_value": 6, "start_time": 0, "end_value": 2, "end_time": 3
+            },
+            "target_tag": "Mouth",
+            "max_catch_distance": 3.0,
+            "max_catch_distance_for_search": 8.0,
+            "max_catch_angle": 60.0,
+            "min_catch_time_for_search": 0.01,
+            "max_catch_time_for_search": 2.5,
+            "min_catch_time": 0.2,
+            "max_catch_time": 2.5,
+            "min_catch_speed": 3.0,
+            "max_catch_speed": 9.0,
+            "time_between_catch_searches": 0.3,
+            "return_time": 1.0,
+            "play_eating_animation": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id" : "PatronGiraffette_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": {
+              "x": 0.014,
+              "y": 0.014,
+              "z": 0.014
+            },
+            "position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "orientation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/giraffe_rig.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "render_pass": ["Opaque"],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // End game patrons
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "EndMoustacheCroc",
+            "prototype": "PatronMoustacheCroc"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 8,
+              "y": 8,
+              "z": 0.5
+            },
+            "scale": {
+              "x": 1.25,
+              "y": 1.25,
+              "z": 1.25
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": -160
+            },
+            "child_ids": [
+              "PatronMoustacheCroc_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "DapperCroc",
+            "min_lap": 10000,
+            "events": [
+              { "action": "GetUp", "time": 2500 },
+              { "action": "Satisfied" },
+              { "action": "Fall" },
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "EndBankerBird",
+            "prototype": "PatronBankerBirdNoRail"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 4,
+              "y": 6,
+              "z": 4
+            },
+            "scale": {
+              "x": 1.25,
+              "y": 1.25,
+              "z": 1.25
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": -135
+            },
+            "child_ids": [
+              "PatronBankerBird_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "BankerBird",
+            "min_lap": 10000,
+            "events": [
+              { "action": "GetUp", "time": 3500 },
+              { "action": "Satisfied" },
+              { "action": "Fall" },
+            ],
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "EndHungryHippo",
+            "prototype": "PatronHungryHippo"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 12,
+              "z": -1
+            },
+            "scale": {
+              "x": 1.75,
+              "y": 1.75,
+              "z": 1.75
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": 180
+            },
+            "child_ids": [
+              "PatronHungryHippo_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "HungryHippo",
+            "min_lap": 10000,
+            "events": [
+              { "action": "GetUp", "time": 1800 },
+              { "action": "Satisfied" },
+              { "action": "Fall" },
+            ],
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "EndLovelyGiraffette",
+            "prototype": "PatronGiraffette"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 7,
+              "y": 14,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.5,
+              "y": 1.5,
+              "z": 1.5
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": -150
+            },
+            "child_ids": [
+              "PatronGiraffette_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "LovelyGiraffette",
+            "min_lap": 10000,
+            "events": [
+              { "action": "GetUp", "time": 2500 },
+              { "action": "Satisfied" },
+              { "action": "Fall" },
+            ],
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "EndLadyMandrill",
+            "prototype": "PatronLadyMandrill"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": -6,
+              "y": 7,
+              "z": 0
+            },
+            "scale": {
+              "x": 1.25,
+              "y": 1.25,
+              "z": 1.25
+            },
+            "orientation": {
+              "x": 0,
+              "y": 0,
+              "z": 150
+            },
+            "child_ids": [
+              "PatronLadyMandrill_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "PatronDef",
+          "data": {
+            "anim_object": "LadyMandrill",
+            "min_lap": 10000,
+            "events": [
+              { "action": "GetUp", "time": 2800 },
+              { "action": "Satisfied" },
+              { "action": "Fall" }
+            ]
+          }
+        }
+      ]
+    },
+
+    // Projectile
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Projectile"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "Projectile_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.53,
+                    "y": 0.22,
+                    "z": 0.22
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.05
+                },
+                "restitution": 1.0,
+                "collision_type": "Projectile",
+                "collides_with": [
+                  "Patron",
+                  "Ground"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data" : {
+            "filename_list": [
+              "graphs/sushi.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "TimeLimitDef",
+          "data": {
+            "timelimit": 3.0
+          }
+        },
+        {
+          "data_type": "PlayerProjectileDef",
+          "data": {}
+        },
+        {
+          "data_type": "SoundDef",
+          "data": {
+            "sound": "sushi_whoosh"
+          }
+        }
+      ]
+    },
+    // Projectile_Lobster
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Projectile_Lobster",
+            "prototype": "Projectile"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.53,
+                    "y": 0.22,
+                    "z": 0.22
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.05
+                },
+                "restitution": 1.0,
+                "collision_type": "Projectile",
+                "collides_with": [
+                  "Patron",
+                  "Ground"
+                ]
+              }
+            ],
+            "gravity_multiplier": 2.0
+          }
+        }
+      ]
+    },
+    // Projectile_FlyingFish
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Projectile_FlyingFish",
+            "prototype": "Projectile"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.53,
+                    "y": 0.22,
+                    "z": 0.22
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.05
+                },
+                "restitution": 1.0,
+                "collision_type": "Projectile",
+                "collides_with": [
+                  "Patron",
+                  "Ground"
+                ]
+              }
+            ],
+            "gravity_multiplier": 0.5
+          }
+        }
+      ]
+    },
+    // Projectile_Pufferfish
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Projectile_Pufferfish",
+            "prototype": "Projectile"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.53,
+                    "y": 0.22,
+                    "z": 0.22
+                  }
+                },
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.05
+                },
+                "restitution": 1.0,
+                "collision_type": "Projectile",
+                "collides_with": [
+                  "Patron",
+                  "Ground"
+                ]
+              }
+            ],
+            "gravity_multiplier": -1.0
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Projectile_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": { "x": 200.0, "y": 200.0, "z": 200.0 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data": {
+            "source_file": "meshes/sushi_salmon.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Ground
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Ground"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": 0.0, "y": 0.0, "z": 0.0 },
+            "scale": { "x": 50.0, "y": 50.0, "z": 50.0 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/ground.fplmesh",
+            "shaders": [
+              "shaders/textured",
+              "shaders/render_depth"
+            ],
+            "culling": [],
+            "visible": false
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "render_option": "OnlyInEditor"
+          }
+        }
+      ]
+    },
+
+    // Mid-Ground Tree
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "MidGroundTree"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": 0.0, "y": 0.0, "z": 0.0 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/tree_saturated.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery",
+            "faces_raft": true
+          }
+        }
+      ]
+    },
+
+    // Sky Box
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SkyBox"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": ["SkyBox_RenderMesh"]
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SkyBox_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/skybox_daytime.fplmesh",
+            "shaders": [
+              "shaders/textured_opaque"
+            ],
+            "culling": []
+          }
+        }
+      ]
+    },
+
+    // Light Main
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Light"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "render_option": "OnlyInEditor"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/sun_light.fplmesh",
+            "shaders": [
+              "shaders/color",
+              "shaders/render_depth"
+            ],
+            "culling": ["Distance"],
+            "visible": false,
+            "tint": {     // yellow tint
+              "r": 1.0,
+              "g": 1.0,
+              "b": 0.0,
+              "a": 1.0
+            }
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.005,
+                    "y": 0.005,
+                    "z": 0.005
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "mass": 40.0,
+                "restitution": 1.0,
+                "collision_type": "Raycast",
+                "collides_with": [
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    // Grass Dense
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassDense_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/grass_dense.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Rock Smallest
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockSmallest"
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "RockSmallest_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.35,
+                    "y": 0.35,
+                    "z": 0.25
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "mass": 20.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockSmallest_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -0.012, "y": 0.074, "z": 0.069 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/rock_smallest.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Rock Smaller
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockSmaller"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "RockSmaller_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.45,
+                    "y": 0.45,
+                    "z": 0.3
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "mass": 20.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockSmaller_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -0.059, "y": -0.024, "z": -0.017 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/rock_smaller.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Rock Short
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockShort"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "RockShort_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.8,
+                    "y": 0.6,
+                    "z": 1.2
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": -0.1,
+                  "z": 0
+                },
+                "mass": 40.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    // Light Main
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "LightPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef"
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 5.3,
+                    "y": 1.3,
+                    "z": 1.2
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 7.8
+                },
+                "mass": 40.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ],
+                "user_tag": "mid"
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    // Grass Dense
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockShort_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": 0.078, "y": -0.094, "z": -0.339 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/rock_short.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Rock Mid
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockMid_Base"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "RockMid_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.9,
+                    "y": 0.7,
+                    "z": 1.6
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0.2,
+                  "z": 0
+                },
+                "mass": 50.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockMid",
+            "prototype": "RockMid_Base"
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockMid_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -0.146, "y": 0.291, "z": -1.627 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/rock_mid.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Rock Tall
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockTall"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "RockTall_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1,
+                    "y": 0.8,
+                    "z": 2.4
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0.1,
+                  "z": 0
+                },
+                "mass": 60.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "RockTall_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": { "x": -0.059, "y": 0.192, "z": -2.739 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/rock_tall.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Gate
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GatePrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [
+              "Gate_RenderMesh"
+            ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Gate"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data": {
+            "filename_list": [
+              "graphs/gate.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 5.3,
+                    "y": 1.3,
+                    "z": 1.2
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 7.8
+                },
+                "mass": 40.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ],
+                "user_tag": "mid"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.5,
+                    "y": 1.3,
+                    "z": 4.5
+                  }
+                },
+                "offset": {
+                  "x": 4.7,
+                  "y": 0,
+                  "z": 4.8
+                },
+                "mass": 40.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ],
+                "user_tag": "left"
+              },
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 1.5,
+                    "y": 1.3,
+                    "z": 4.5
+                  }
+                },
+                "offset": {
+                  "x": -4.4,
+                  "y": 0,
+                  "z": 4.8
+                },
+                "mass": 40.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Projectile",
+                  "Raycast"
+                ],
+                "user_tag": "right"
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "Gate_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef"
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/gate.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        },
+        {
+          "data_type": "corgi_GraphDef",
+          "data": {
+            "filename_list": [
+              "graphs/score.bbgraph"
+            ]
+          }
+        },
+        {
+          "data_type" : "Render3dTextDef",
+          "data" : {
+            "animation_bone": 4, // Gate Sign
+            "canvas_size": 5,
+            "font": "fonts/RaviPrakash-Regular.ttf",
+            "label_size": 100,
+            "translation": {
+              "x": 0,
+              "y": 6.67,
+              "z": 0.3
+            },
+            "rotation": { // Degrees
+              "x": 0,
+              "y": 180,
+              "z": 180
+            },
+            "scale": {
+              "x": 0.0095,
+              "y": 0.0095,
+              "z": 0
+            },
+            "text": ""
+          }
+        }
+      ]
+    },
+
+    // Fern Short
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernShort"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "FernShort_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "FernShort"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernShort_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/fern_short.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Fern Mid
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernMid"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "FernMid_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "FernMid"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernMid_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/fern_mid.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "culling": ["ViewAngle", "Distance"],
+          }
+        }
+      ]
+    },
+
+    // Fern Tall
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernTall"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "FernTall_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "FernTall"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_PhysicsDef",
+          "data": {
+            "shapes": [
+              {
+                "data_type": "BulletBoxDef",
+                "data": {
+                  "half_extents": {
+                    "x": 0.5,
+                    "y": 0.5,
+                    "z": 1,
+                  }
+                },
+                "offset": {
+                  "x": 0,
+                  "y": 0.1,
+                  "z": 0
+                },
+                "mass": 60.0,
+                "restitution": 0.3,
+                "collision_type": "Ground",
+                "collides_with": [
+                  "Raycast"
+                ]
+              }
+            ],
+            "kinematic": true
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FernTall_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/fern_tall.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "culling": ["ViewAngle", "Distance"],
+          }
+        }
+      ]
+    },
+
+    // Grass Dense
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassDense"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "GrassDense_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    // Grass Small
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassSmall"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "GrassSmall_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassSmall_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/grass_small.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Grass Wide
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassWide"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "GrassWide_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery"
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        }
+      ]
+    },
+
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "GrassWide_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/grass_wide.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Log Prop
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "LogProp"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "LogProp_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery",
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "PointerOnly"
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "LogProp_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },                  {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/log.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Savanna Tree
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SavannaTree"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "SavannaTree_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "PointerOnly"
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery",
+            "faces_raft": true
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SavannaTree_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/savanna_tree_01.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Baobab Tree
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "BaobabTree"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "BaobabTree_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery",
+            "faces_raft": true
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "BaobabTree_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": { "x": 0.01, "y": 0.01, "z": 0.01 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/tree_03.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+
+    // Swamp Tree
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SwampTree"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "child_ids": [ "SwampTree_RenderMesh" ]
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "SceneryDef",
+          "data": {
+            "anim_object": "Scenery",
+            "faces_raft": true
+          }
+        }
+      ]
+    },
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "SwampTree_RenderMesh",
+            "prototype": "RenderMeshPrototype"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "scale": { "x": 0.01, "y": 0.01, "z": 0.01 }
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/tree_04.fplmesh",
+            "shaders": [
+              "shaders/textured_lit",
+              "shaders/render_depth"
+            ],
+            "culling": ["ViewAngle", "Distance"]
+          }
+        }
+      ]
+    },
+    // Heart
+    {
+      "component_list": [
+        {
+          "data_type": "corgi_MetaDef",
+          "data": {
+            "entity_id": "FloatingPointDisplay"
+          }
+        },
+        {
+          "data_type": "corgi_TransformDef",
+          "data": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 0.2,
+              "y": 0.2,
+              "z": 0.2
+            },
+          }
+        },
+        {
+          "data_type": "SimpleMovementDef",
+          "data" : {
+            "velocity" : { "x": 0, "y": 0, "z": 1 }
+          }
+        },
+        {
+          "data_type": "scene_lab_EditOptionsDef",
+          "data": {
+            "selection_option": "Any"
+          }
+        },
+        {
+          "data_type": "corgi_AnimationDef",
+          "data": {
+            "anim_table_object": "fpl.AnimObject.Heart",
+            "anim_table_start_idx": 0
+          }
+        },
+        {
+          "data_type": "corgi_RenderMeshDef",
+          "data" : {
+            "source_file":"meshes/heart.fplmesh",
+            "shaders": [
+              "shaders/skinned",
+              "shaders/render_depth_skinned"
+            ],
+            "culling": ["ViewAngle", "Distance"],
+            "tint": {     // red tint
+              "r": 0.86,
+              "g": 0.14,
+              "b": 0.14,
+              "a": 1.0
+            }
+          }
+        },
+        {
+         "data_type": "TimeLimitDef",
+          "data": {
+            "timelimit": 3.0
+          }
+        }
+      ]
+    }
+  ]
+}

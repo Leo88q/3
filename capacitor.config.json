@@ -1,0 +1,6 @@
+{
+  "appId": "com.noriwake.game",
+  "appName": "Noriwake",
+  "webDir": "dist",
+  "android": { "backgroundColor": "#071b28" }
+}

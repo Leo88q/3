@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Google Inc. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<project name="setup_fplbase_and_libraries">
+  <!--Get the location of fplbase by running ndk-build print_dependency.-->
+  <condition property="ndkbuild_exe" value="ndk-build.cmd" else="ndk-build">
+    <os family="windows"/>
+  </condition>
+  <exec executable="${ndkbuild_exe}" outputproperty="fplbasepath">
+    <arg value="print_dependency"/>
+    <arg value="DEP_DIR=FPLBASE"/>
+    <arg value="NDK_NO_INFO=1"/>
+  </exec>
+  <!--Include the common build rules from fplbase.-->
+  <include file="${fplbasepath}/jni/custom_rules.xml" as="fplbase"/>
+
+  <condition property="android_exe" value="android.bat" else="android">
+    <os family="windows" />
+  </condition>
+
+  <target name="initialize-google-play-games_lib"
+          description="Initialize Google Play Games library in the project.">
+    <!-- Copy the library to the project. -->
+    <!-- Temporarily disable this while we use a debug version of the lib -->
+    <copy todir="google-play-services_lib">
+      <fileset dir="${sdk.dir}/extras/google/google_play_services/libproject/google-play-services_lib"/>
+    </copy>
+    <!-- Create an ant project for the library. -->
+    <exec executable="${android_exe}">
+      <arg value="update"/>
+      <arg value="project"/>
+      <arg value="-p"/>
+      <arg value="google-play-services_lib"/>
+      <arg value="-t"/>
+      <arg value="${target}"/>
+    </exec>
+  </target>
+
+  <target name="initialize-android-support_lib"
+          description="Initialize Android Support library in the project.">
+    <!-- Copy the library to the project. -->
+    <copy todir="libs">
+      <fileset file="${sdk.dir}/extras/android/support/v4/android-support-v4.jar"/>
+    </copy>
+  </target>
+
+  <target name="-pre-build" depends="fplbase.setup-fplbase,
+                                     initialize-google-play-games_lib,
+                                     initialize-android-support_lib"/>
+  <target name="-pre-clean" depends="initialize-google-play-games_lib,
+                                     initialize-android-support_lib" />
+</project>

@@ -1,0 +1,224 @@
+// When a collision with the entity's mouth occurs, set the starting speed of
+// the raft.
+{
+  "node_list": [
+    {
+      // Node 0
+      "module": "entity",
+      "name": "graph_entity"
+    },
+    {
+      // Node 1
+      "module": "physics",
+      "name": "on_collision",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 0,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 2
+      "module": "physics",
+      "name": "collision_data",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 1,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 3
+      "module": "string",
+      "name": "equals",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 2,
+            "edge_index": 2
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_String",
+          "edge": {
+            "value": "Mouth"
+          }
+        }
+      ]
+    },
+    {
+      // Node 4
+      "module": "logic",
+      "name": "if_gate",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 7,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 12,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 5
+      "module": "zooshi",
+      "name": "raft_entity"
+    },
+    {
+      // Node 6
+      "module": "transform",
+      "name": "child",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 0,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_Int",
+          "edge": {
+            "value": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 7
+      "module": "animation",
+      "name": "animation_complete",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 6,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 8
+      "module": "rail_denizen",
+      "name": "set_rail_speed",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 4,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 5,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_Float",
+          "edge": {
+            "value": 0.5
+          }
+        }
+      ]
+    },
+    {
+      // Node 9
+      "module": "entity",
+      "name": "entity",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 4,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_String",
+          "edge": {
+            "value": "Gate"
+          }
+        }
+      ]
+    },
+    {
+      // Node 10
+      "module": "zooshi",
+      "name": "set_show_override",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 4,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 9,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_Int",
+          "edge": {
+            "value": 4
+          }
+        }
+      ]
+    },
+    {
+      // Node 11
+      "module": "logic",
+      "name": "if",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 3,
+            "edge_index": 0
+          }
+        }
+      ]
+    },
+    {
+      // Node 12
+      "module": "logic",
+      "name": "stay_latch",
+      "input_edge_list": [
+        {
+          "edge_type": "breadboard_module_library_OutputEdgeTarget",
+          "edge": {
+            "node_index": 11,
+            "edge_index": 0
+          }
+        },
+        {
+          "edge_type": "breadboard_module_library_Pulse"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+// Copyright 2015 Google Inc. All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#ifdef FOG_EFFECT
+
+// Fog effect:
+// current_color - the starting color.
+// z_depth - the z-depth of the object
+// fog_roll_in_dist - At what z-depth the fog starts to have an effect
+// fog_max_distance - the distance after which the fog is at its maximum
+// fog_color - the color to tint things with, as they get foggier
+// fog_max_saturation - a scalar, representing what percent of an object
+//      at fog_max_distance's color is the fog color.
+
+varying mediump float vDepth;
+uniform mediump float fog_roll_in_dist;
+uniform mediump float fog_max_dist;
+uniform lowp vec4 fog_color;
+uniform lowp float fog_max_saturation;
+
+
+lowp vec4 ApplyFog(lowp vec4 current_color, mediump float z_depth,
+                   mediump float roll_in_dist, mediump float max_dist,
+                   lowp vec4 fogcolor, lowp float max_saturation) {
+  lowp float fog_factor = (clamp(z_depth, roll_in_dist, max_dist) -
+      roll_in_dist) / (max_dist - roll_in_dist);
+
+  lowp vec4 final_color = mix(current_color, fogcolor, fog_factor *
+      max_saturation);
+
+  return final_color;
+}
+
+#endif  // FOG_EFFECT

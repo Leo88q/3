@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "mirrors": {
+    "freetype": {"upstream_url": "git://git.sv.nongnu.org/freetype/freetype2.git", "repository": "freetype/freetype", "commit": "f353a38e87a894a0a3280f5e27278831a1a2aaad"},
+    "libogg": {"upstream_url": "https://git.xiph.org/mirrors/ogg.git", "repository": "xiph/ogg", "commit": "ab78196fd59ad7a329a2b19d2bcec5d840a9a21f"},
+    "libvorbis": {"upstream_url": "https://git.xiph.org/mirrors/vorbis.git", "repository": "xiph/vorbis", "commit": "ec345eee8c5af00154b237f67509c96b43cfa8a7"},
+    "webp": {"upstream_url": "https://chromium.googlesource.com/webm/libwebp", "repository": "webmproject/libwebp", "commit": "8af2771813632e2007988c8df6ad7e68b28ad121"},
+    "harfbuzz": {"upstream_url": "http://github.com/behdad/harfbuzz.git", "repository": "harfbuzz/harfbuzz", "commit": "aee685086c8fde6f6c4590e483a177c19f222540"},
+    "hyphenation-patterns": {"upstream_url": "https://android.googlesource.com/platform/external/hyphenation-patterns", "repository": "khadas/android_external_hyphenation-patterns", "commit": "dedeff64279b77bafff72b6d866efc93e829b4ab"}
+  }
+}

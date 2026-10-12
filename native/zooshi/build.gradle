@@ -1,0 +1,69 @@
+// Noriwake modification (2026-10-12): Pin AGP 8.7.3, SDK 35/23, NDK r28c and 64-bit ABIs; read engine sources directly with override preflight, no JAR/SDK copying.
+// Noriwake modification (2026-10-12): Modern Android migration target, not a verified APK build.
+// Original build.gradle derived from google/zooshi under Apache-2.0; see LICENSE.
+plugins {
+    id 'com.android.application' version '8.7.3'
+}
+
+android {
+    namespace 'com.noriwake.game.nativepreview'
+    compileSdk 35
+    ndkVersion '28.2.13676358'
+
+    defaultConfig {
+        applicationId 'com.noriwake.game.nativepreview'
+        minSdk 23
+        targetSdk 35
+        versionCode 2
+        versionName '0.2.0-offline-dev'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+        externalNativeBuild {
+            ndkBuild { arguments "NDK_APPLICATION_MK:=${file('jni/Application.mk').absolutePath}" }
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            // No copying to src_java, no wildcard JAR/AAR loading or stale SDK binaries.
+            java.srcDirs = ['src_java/com/google/fpl/zooshi', 'dependencies/fplbase/src_java']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['built_assets']
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        debug { debuggable true }
+        release {
+            minifyEnabled false
+            // Release signing belongs to the publisher; no secrets in this project.
+        }
+    }
+    externalNativeBuild { ndkBuild { path file('jni/Android.mk') } }
+}
+
+// Explicit preflight: never silently build unreviewed/old engine Java or makefiles.
+// Python 3 checks the prepared asset manifest; no network or conversions during Gradle.
+def checkEngine = tasks.register('checkEngineOverrides', Exec) {
+    workingDir rootDir.parentFile.parentFile
+    commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+                'tools/native.py', 'patches', '--check'
+}
+tasks.configureEach {
+    if (name == 'preBuild' || name.startsWith('configureNdkBuild') ||
+        name.startsWith('buildNdkBuild') || name.startsWith('externalNativeBuild')) {
+        dependsOn checkEngine
+    }
+}
+
+// Noriwake modification (2026-10-12): refuse an APK with absent/stale resources.
+def checkAssets = tasks.register('checkPreparedAssets', Exec) {
+    workingDir rootDir.parentFile.parentFile
+    commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+                'tools/build_native_assets.py', '--check'
+}
+tasks.configureEach {
+    if (name == 'preBuild') { dependsOn checkAssets }
+}

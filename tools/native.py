@@ -4,9 +4,7 @@
 # See native/zooshi/LICENSE.
 import argparse
 import hashlib
-import http.client
 import time
-import urllib.error
 import json
 import os
 import re
@@ -16,7 +14,6 @@ import subprocess
 import sys
 import tarfile
 import tempfile
-import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT/'tools') not in sys.path: sys.path.insert(0,str(ROOT/'tools'))
@@ -44,48 +41,67 @@ def read_blob(path):
     return os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
 
 
-def download(url, path):
-    """Retry transient transfers from scratch; publish only a complete response.
+DOWNLOAD_SECONDS = 120
+DOWNLOAD_ATTEMPTS = 4
 
-    Callers still verify pinned Git blobs. TLS and integrity checks are never
-    bypassed, and filesystem errors are not treated as network interruptions.
+
+def download(url, path):
+    """Bound the whole transfer, show progress and publish complete files only.
+
+    curl checks HTTP framing, including truncated chunked/content-length bodies.
+    Callers additionally verify every pinned Git blob before using an archive.
+    No TLS bypass, alternate source or unverified resume is permitted.
     """
+    curl = shutil.which('curl')
+    if not curl:
+        raise OSError('curl is required for bounded downloads (included with macOS).')
     path.parent.mkdir(parents=True, exist_ok=True)
-    attempts = 4
-    for attempt in range(1, attempts + 1):
+    for attempt in range(1, DOWNLOAD_ATTEMPTS + 1):
         temporary = None
+        print(f'Downloading {path.name} ({attempt}/{DOWNLOAD_ATTEMPTS}, '
+              f'max {DOWNLOAD_SECONDS}s): {url}', file=sys.stderr, flush=True)
         try:
-            request = urllib.request.Request(url, headers={'User-Agent': 'Noriwake-source-preparation'})
-            with urllib.request.urlopen(request, timeout=90) as response:
-                with tempfile.NamedTemporaryFile(dir=path.parent, prefix=path.name + '.',
-                                                 suffix='.part', delete=False) as out:
-                    temporary = Path(out.name)
-                    shutil.copyfileobj(response, out)
-                    # Fixed-length HTTP reads can return EOF without raising
-                    # IncompleteRead; chunked truncation raises it directly.
-                    length = response.headers.get('Content-Length')
-                    if length is not None and out.tell() != int(length):
-                        raise http.client.IncompleteRead(b'', max(0, int(length) - out.tell()))
-            temporary.replace(path)
-            return
-        except (urllib.error.URLError, http.client.IncompleteRead,
-                TimeoutError, ConnectionError) as exc:
-            if isinstance(exc, urllib.error.HTTPError):
-                retryable = exc.code in (408, 429, 500, 502, 503, 504)
-                exc.close()
-                if not retryable:
-                    raise
-            if attempt == attempts:
-                raise OSError(
-                    f'Download failed after {attempts} attempts: {url}. '
-                    'Check your connection and rerun the same build command; '
-                    'verified dependencies are retained. Last error: ' + str(exc)
-                ) from exc
-            print(f'Download interrupted ({attempt}/{attempts}): {url}: {exc}. '
-                  f'Retrying in {2 ** attempt}s...', file=sys.stderr, flush=True)
+            with tempfile.NamedTemporaryFile(dir=path.parent, prefix=path.name + '.',
+                                             suffix='.part', delete=False) as out:
+                temporary = Path(out.name)
+            # Ignore user curlrc (must be first); inherit stderr for live progress.
+            # HTTP/1.1 avoids HTTP/2 transport issues without weakening TLS.
+            command = [curl, '--disable', '--location', '--fail', '--show-error',
+                       '--http1.1', '--proto', '=https',
+                       '--proto-redir', '=https', '--connect-timeout', '20',
+                       '--max-time', str(DOWNLOAD_SECONDS),
+                       '--speed-limit', '1024', '--speed-time', '30',
+                       '--user-agent', 'Noriwake-source-preparation',
+                       '--output', str(temporary), '--write-out', '%{http_code}', url]
+            try:
+                result = subprocess.run(command, stdout=subprocess.PIPE, text=True,
+                                        timeout=DOWNLOAD_SECONDS + 10)
+                status = result.stdout.strip()
+                error = f'curl exit {result.returncode}, HTTP {status or "unknown"}'
+                retryable = result.returncode in (5, 6, 7, 18, 28, 35, 52, 55, 56, 92)
+                if result.returncode == 22:
+                    retryable = status in ('408', '429', '500', '502', '503', '504')
+                if result.returncode == 0 and status == '200':
+                    size = temporary.stat().st_size
+                    if not size:
+                        raise OSError(f'Empty download refused: {url}')
+                    temporary.replace(path)
+                    print(f'Download complete: {path.name} ({size} bytes)',
+                          file=sys.stderr, flush=True)
+                    return
+            except subprocess.TimeoutExpired:
+                # subprocess.run kills and waits for curl before returning here.
+                error = f'download process exceeded {DOWNLOAD_SECONDS + 10}s'
+                retryable = True
+            if not retryable or attempt == DOWNLOAD_ATTEMPTS:
+                raise OSError(f'Download failed after {attempt} attempt(s): {url}: {error}. '
+                              'Check your connection and rerun the same build command; '
+                              'verified dependencies are retained.')
         finally:
             if temporary is not None:
                 temporary.unlink(missing_ok=True)
+        print(f'Download interrupted: {error}. Retrying in {2 ** attempt}s...',
+              file=sys.stderr, flush=True)
         time.sleep(2 ** attempt)
 
 
@@ -182,7 +198,8 @@ def fetch_dependency(lock, name):
     if dest.exists() and any(dest.iterdir()):
         raise ValueError('Dependency directory already populated; refusing overwrite: ' + name)
     # Use GitHub tree IDs to verify *every* downloaded blob at the pinned commit.
-    response = subprocess.run(['gh', 'api', f"repos/{repo}/git/trees/{d['commit']}?recursive=1"], check=True, capture_output=True, text=True)
+    print(f"Fetching pinned dependency metadata: {name} (max 60s)", flush=True)
+    response = subprocess.run(['gh', 'api', f"repos/{repo}/git/trees/{d['commit']}?recursive=1"], check=True, capture_output=True, text=True, timeout=60)
     tree = json.loads(response.stdout)
     if tree.get('truncated'):
         raise ValueError('Truncated dependency tree; refusing partial verification.')
@@ -204,7 +221,7 @@ def fetch_dependency(lock, name):
                     # git archive honors export-ignore, but our source manifest covers
                     # every Git blob. Retrieve the omitted object, never silently skip it.
                     data = subprocess.run(['gh','api','-H','Accept: application/vnd.github.raw+json',
-                        f"repos/{repo}/git/blobs/{entry['sha']}"], check=True, capture_output=True).stdout
+                        f"repos/{repo}/git/blobs/{entry['sha']}"], check=True, capture_output=True, timeout=60).stdout
                 else:
                     if not (member.issym() if is_link else member.isfile()):
                         raise ValueError('Unexpected dependency archive member: ' + entry['path'])
@@ -302,7 +319,7 @@ def main():
         elif args.only: fetch_dependency(lock,args.only)
         else:
             for d in lock['dependencies']: print(d['path'],d['commit'],d['url'])
-    except (ValueError,OSError,KeyError,subprocess.CalledProcessError) as exc:
+    except (ValueError,OSError,KeyError,subprocess.CalledProcessError,subprocess.TimeoutExpired) as exc:
         print('ERROR:',exc,file=sys.stderr); return 1
     return 0
 

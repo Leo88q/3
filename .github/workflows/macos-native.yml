@@ -34,10 +34,20 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 tools/ci_native_step.py tools/check_native_cpp.py --fetch
+      - name: Install explicit Mac desktop system libraries
+        run: brew install pkgconf sdl2 sdl2_mixer freetype harfbuzz libunibreak gumbo-parser webp
+      - name: Build and link the actual native desktop game
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/ci_native_step.py tools/build_macos_game.py --fetch
       - name: Preserve diagnostics (not an app)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: macos-native-diagnostics
-          path: "${{ github.workspace }}/mac/ Noriwake/.cache/native-cpp-check/"
+          path: |
+            ${{ github.workspace }}/mac/ Noriwake/.cache/native-cpp-check/summary.json
+            ${{ github.workspace }}/mac/ Noriwake/.cache/native-cpp-check/logs/
+            ${{ github.workspace }}/mac/ Noriwake/.cache/macos-game/compile.log
+            ${{ github.workspace }}/mac/ Noriwake/.cache/macos-game/build-report.json
           if-no-files-found: ignore

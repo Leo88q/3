@@ -4,6 +4,9 @@
 # See native/zooshi/LICENSE.
 import argparse
 import hashlib
+import http.client
+import time
+import urllib.error
 import json
 import os
 import re
@@ -42,15 +45,48 @@ def read_blob(path):
 
 
 def download(url, path):
+    """Retry transient transfers from scratch; publish only a complete response.
+
+    Callers still verify pinned Git blobs. TLS and integrity checks are never
+    bypassed, and filesystem errors are not treated as network interruptions.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + '.part')
-    try:
-        request = urllib.request.Request(url, headers={'User-Agent': 'Noriwake-source-preparation'})
-        with urllib.request.urlopen(request, timeout=90) as response, temporary.open('wb') as out:
-            shutil.copyfileobj(response, out)
-        temporary.replace(path)
-    finally:
-        temporary.unlink(missing_ok=True)
+    attempts = 4
+    for attempt in range(1, attempts + 1):
+        temporary = None
+        try:
+            request = urllib.request.Request(url, headers={'User-Agent': 'Noriwake-source-preparation'})
+            with urllib.request.urlopen(request, timeout=90) as response:
+                with tempfile.NamedTemporaryFile(dir=path.parent, prefix=path.name + '.',
+                                                 suffix='.part', delete=False) as out:
+                    temporary = Path(out.name)
+                    shutil.copyfileobj(response, out)
+                    # Fixed-length HTTP reads can return EOF without raising
+                    # IncompleteRead; chunked truncation raises it directly.
+                    length = response.headers.get('Content-Length')
+                    if length is not None and out.tell() != int(length):
+                        raise http.client.IncompleteRead(b'', max(0, int(length) - out.tell()))
+            temporary.replace(path)
+            return
+        except (urllib.error.URLError, http.client.IncompleteRead,
+                TimeoutError, ConnectionError) as exc:
+            if isinstance(exc, urllib.error.HTTPError):
+                retryable = exc.code in (408, 429, 500, 502, 503, 504)
+                exc.close()
+                if not retryable:
+                    raise
+            if attempt == attempts:
+                raise OSError(
+                    f'Download failed after {attempts} attempts: {url}. '
+                    'Check your connection and rerun the same build command; '
+                    'verified dependencies are retained. Last error: ' + str(exc)
+                ) from exc
+            print(f'Download interrupted ({attempt}/{attempts}): {url}: {exc}. '
+                  f'Retrying in {2 ** attempt}s...', file=sys.stderr, flush=True)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
+        time.sleep(2 ** attempt)
 
 
 def hydrate(lock, offline=False):

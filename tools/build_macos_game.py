@@ -45,13 +45,17 @@ def run(command):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fetch', action='store_true', help='Prepare missing pinned C++ dependency sources')
-    parser.add_argument('--run', action='store_true', help='Launch the actual game after successful build')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--run', action='store_true', help='Launch the actual game after successful build')
+    mode.add_argument('--smoke-test', action='store_true', help='Initialize OpenGL/game, run briefly, quit; not gameplay QA')
     parser.add_argument('--jobs', type=int, default=2)
     args = parser.parse_args()
     if platform.system() != 'Darwin' or platform.machine() not in ('arm64', 'x86_64'):
         raise ValueError('This executable profile requires macOS arm64/x86_64')
     if not 1 <= args.jobs <= 16:
         raise ValueError('--jobs must be 1..16')
+    report_path = CACHE/'build-report.json'
+    report_path.unlink(missing_ok=True)
     inputs = assets.verify_inputs(fetch=args.fetch, dependencies=cpp.DEPENDENCIES)
     assets.check_output(inputs)
     manifest = source_manifest()
@@ -81,9 +85,6 @@ def main():
     run(['cmake', '-S', native.ROOT/'native/macos', '-B', CACHE, '-G', 'Ninja',
          '-DCMAKE_BUILD_TYPE=Debug', '-DCMAKE_OSX_ARCHITECTURES='+platform.machine(),
          '-DCMAKE_MAKE_PROGRAM='+shutil.which('ninja')])
-    report_path = CACHE/'build-report.json'
-    # A previously successful report must not survive a failed rebuild.
-    report_path.unlink(missing_ok=True)
     process = subprocess.run(['cmake', '--build', str(CACHE), '--parallel', str(args.jobs)],
                              text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     (CACHE/'compile.log').write_text(process.stdout)
@@ -117,6 +118,24 @@ def main():
     print('NATIVE GAME LINKED:', executable)
     print('Architecture:', architecture, 'System libraries:', libraries)
     print('Runtime is NOT validated by linking. This is a local development build, not a portable .app.')
+    if args.smoke_test:
+        try:
+            smoke = subprocess.run([str(executable), '--smoke-test'], cwd=CACHE,
+                                   capture_output=True, text=True, timeout=60)
+            log = smoke.stdout + smoke.stderr
+            report['smoke_exit_code'] = smoke.returncode
+        except subprocess.TimeoutExpired as exc:
+            log = 'SMOKE TIMEOUT: game did not initialize/quit within 60 seconds\n'
+            log += (exc.stdout or b'').decode(errors='replace') if isinstance(exc.stdout, bytes) else (exc.stdout or '')
+            log += (exc.stderr or b'').decode(errors='replace') if isinstance(exc.stderr, bytes) else (exc.stderr or '')
+            report['smoke_exit_code'] = 'timeout'
+        (CACHE/'smoke.log').write_text(log)
+        report['runtime_tested'] = (report['smoke_exit_code'] == 0 and 'SMOKE PASSED:' in log)
+        report['runtime_scope'] = 'Game initialization, real window/OpenGL context and timed loop exit ONLY'
+        report_path.write_text(json.dumps(report, indent=2)+'\n')
+        print(log, flush=True)
+        if not report['runtime_tested']:
+            raise ValueError('Game startup smoke test failed; see .cache/macos-game/smoke.log')
     if args.run:
         run([executable])
 

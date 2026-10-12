@@ -15,11 +15,14 @@ def main():
         return 2
     print('::notice title=Native host::'+escape(
         f'{platform.system()}/{platform.machine()} macOS={platform.mac_ver()[0]}'), flush=True)
-    result = subprocess.run([sys.executable, *sys.argv[1:]],
+    command = sys.argv[2:] if sys.argv[1] == '--exec' else [sys.executable, *sys.argv[1:]]
+    result = subprocess.run(command,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     print(result.stdout, end='', flush=True)
     if result.returncode:
         print('::error title=Native check failed::'+escape(result.stdout[-15000:]), flush=True)
+    else:
+        print('::notice title=Native check passed::'+escape(result.stdout[-3000:]), flush=True)
     return result.returncode
 
 

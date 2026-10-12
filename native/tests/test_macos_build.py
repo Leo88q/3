@@ -45,3 +45,14 @@ class MacDesktopBuildTests(unittest.TestCase):
         self.assertIn('refusing overwrite', tool)
         self.assertIn("if args.run:", tool)
         self.assertIn('SDL2/SDL2_mixer 2.x, not SDL3', tool)
+
+    def test_workers_stop_before_stack_context_is_destroyed(self):
+        code = (ROOT/'native/zooshi/src/game.cpp').read_text()
+        header = (ROOT/'native/zooshi/src/game.h').read_text()
+        self.assertIn('std::atomic<bool> game_exiting_', header)
+        self.assertIn('SDL_WaitThread(update_thread, nullptr)', code)
+        self.assertIn('SDL_WaitThread(vsync_simulator_thread, nullptr)', code)
+        self.assertIn('std::atomic<bool> stop_vsync(false)', code)
+        self.assertIn('input_.app_event_callbacks().clear()', code)
+        self.assertNotIn('input_.AddAppEventCallback(nullptr)', code)
+        self.assertIn('if (rt_data->game_exiting->load()) break', code)

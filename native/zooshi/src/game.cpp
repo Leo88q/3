@@ -1,3 +1,4 @@
+// Noriwake modification (2026-10-12): stop/join desktop vsync and game workers before their stack context dies; clear callbacks rather than append null.
 // Noriwake modification (2026-10-12): Remove cloud app initialization; initialize unavailable offline provider without credentials.
 // Noriwake modification (2026-10-12): Identify downstream development build; upstream attribution retained.
 // Copyright 2015 Google Inc. All rights reserved.
@@ -552,7 +553,7 @@ static inline corgi::WorldTime CurrentWorldTimeSubFrame(
 
 // Stuff the update thread needs to know about:
 struct UpdateThreadData {
-  UpdateThreadData(bool *exiting, World *world_ptr,
+  UpdateThreadData(std::atomic<bool> *exiting, World *world_ptr,
                    StateMachine<kGameStateCount> *statemachine_ptr,
                    fplbase::Renderer *renderer_ptr,
                    fplbase::InputSystem *input_ptr,
@@ -565,7 +566,7 @@ struct UpdateThreadData {
         input(input_ptr),
         audio_engine(audio_engine_ptr),
         sync(sync_ptr) {}
-  bool *game_exiting;
+  std::atomic<bool> *game_exiting;
   World *world;
   StateMachine<kGameStateCount> *state_machine;
   fplbase::Renderer *renderer;
@@ -597,8 +598,9 @@ static int UpdateThread(void *data) {
 #endif  // __ANDROID__
 
   SDL_LockMutex(sync.updatethread_mutex_);
-  while (!*(rt_data->game_exiting)) {
+  while (!rt_data->game_exiting->load()) {
     SDL_CondWait(sync.start_update_cv_, sync.updatethread_mutex_);
+    if (rt_data->game_exiting->load()) break;
 
     // -------------------------------------------
     // Step 5b.  (See comment at the start of Run()
@@ -622,7 +624,7 @@ static int UpdateThread(void *data) {
 
     rt_data->audio_engine->AdvanceFrame(delta_time / 1000.0f);
 
-    *(rt_data->game_exiting) |= rt_data->state_machine->done();
+    if (rt_data->state_machine->done()) rt_data->game_exiting->store(true);
     SDL_UnlockMutex(sync.gameupdate_mutex_);
   }
 
@@ -635,14 +637,16 @@ static int UpdateThread(void *data) {
 }
 
 // TODO: Modify vsync callback API to take a context parameter.
-static GameSynchronization *global_vsync_context = nullptr;
+static std::atomic<SDL_cond*> global_vsync_condition(nullptr);
 void HandleVsync() {
-  SDL_CondBroadcast(global_vsync_context->start_render_cv_);
+  SDL_cond* condition = global_vsync_condition.load();
+  if (condition) SDL_CondBroadcast(condition);
 }
 
 // Hack, to simulate vsync events on non-android devices.
-static int VsyncSimulatorThread(void * /*data*/) {
-  while (true) {
+static int VsyncSimulatorThread(void *data) {
+  auto* exiting = static_cast<std::atomic<bool>*>(data);
+  while (!exiting->load()) {
     HandleVsync();
     SDL_Delay(2);
   }
@@ -701,13 +705,15 @@ void Game::Run() {
   int history_index = 0;
   int total_dropped_frames = 0;
 
-  global_vsync_context = &sync_;
+  global_vsync_condition.store(sync_.start_render_cv_);
 #ifdef __ANDROID__
   fplbase::RegisterVsyncCallback(HandleVsync);
 #else
   // We don't need this on android because we'll just get vsync events directly.
+  // Keep wakeups alive until the render loop has observed the exit flag.
+  std::atomic<bool> stop_vsync(false);
   SDL_Thread *vsync_simulator_thread = SDL_CreateThread(
-      VsyncSimulatorThread, "Zooshi Simulated Vsync Thread", nullptr);
+      VsyncSimulatorThread, "Zooshi Simulated Vsync Thread", &stop_vsync);
   if (!vsync_simulator_thread) {
     LogError("Error creating vsync simulator thread.");
     assert(false);
@@ -763,7 +769,7 @@ void Game::Run() {
     // this function in the thread that set the video mode."
     SystraceBegin("Input::AdvanceFrame()");
     input_.AdvanceFrame(&renderer_.window_size());
-    game_exiting_ |= input_.exit_requested();
+    if (input_.exit_requested()) game_exiting_.store(true);
     SystraceEnd();
 
     // Milliseconds elapsed since last update.
@@ -831,7 +837,19 @@ void Game::Run() {
 #ifdef __ANDROID__
   fplbase::RegisterVsyncCallback(nullptr);
 #endif  // __ANDROID__
-  input_.AddAppEventCallback(nullptr);
+  // Wake the update worker under its wait mutex so shutdown cannot lose a
+  // notification between checking the flag and entering SDL_CondWait.
+  game_exiting_.store(true);
+  SDL_LockMutex(sync_.updatethread_mutex_);
+  SDL_CondBroadcast(sync_.start_update_cv_);
+  SDL_UnlockMutex(sync_.updatethread_mutex_);
+  SDL_WaitThread(update_thread, nullptr);
+#ifndef __ANDROID__
+  stop_vsync.store(true);
+  SDL_WaitThread(vsync_simulator_thread, nullptr);
+#endif
+  global_vsync_condition.store(nullptr);
+  input_.app_event_callbacks().clear();
 }
 
 #if DISPLAY_FRAMERATE_HISTOGRAM

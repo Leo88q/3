@@ -1,3 +1,4 @@
+// Noriwake modification (2026-10-12): atomic cross-thread exit flag for deterministic worker shutdown.
 // Noriwake modification (2026-10-12): Do not include unavailable HMD controller types in a VR=0 Android build.
 // Noriwake modification (2026-10-12): Do not automatically enable legacy Google Play Games on Android.
 // Copyright 2015 Google Inc. All rights reserved.
@@ -18,6 +19,7 @@
 #define ZOOSHI_GAME_H
 
 #include <math.h>
+#include <atomic>
 
 #include "SDL_thread.h"
 #include "breadboard/graph.h"
@@ -190,7 +192,7 @@ class Game {
   corgi::WorldTime histogram[kHistogramSize];
 #endif
 
-  bool game_exiting_;
+  std::atomic<bool> game_exiting_;
 
   std::string rail_source_;
 

@@ -21,8 +21,8 @@
   },
   "src/game.cpp": {
     "date": "2026-10-12",
-    "reason": "Identify downstream development build; upstream attribution retained.; Remove cloud app initialization; initialize unavailable offline provider without credentials.",
-    "sha256": "fb86bd8c9cd5876bcafc5dab4d15ef29a39898e1fed7e88a11e38b6a5fca7f69"
+    "reason": "Identify downstream development build; upstream attribution retained.; Remove cloud app initialization; initialize unavailable offline provider without credentials.; use atomic exit, join workers and clear app-event callbacks before destroying Game/stack thread context.",
+    "sha256": "0eb2fa8a988494c1249b94570ccc24bfc99f7ff6ba3e487e4962349b604fbc8a"
   },
   "src/gui.cpp": {
     "date": "2026-10-12",
@@ -116,8 +116,8 @@
   },
   "src/game.h": {
     "date": "2026-10-12",
-    "reason": "Do not automatically enable legacy Google Play Games on Android.; Do not include unavailable HMD controller types in a VR=0 Android build.",
-    "sha256": "f3b441ea2a4289ffb29d616f204c1349197af1c041e22cfc1e126b47ffe1f7e9"
+    "reason": "Do not automatically enable legacy Google Play Games on Android.; Do not include unavailable HMD controller types in a VR=0 Android build.; use atomic exit, join workers and clear app-event callbacks before destroying Game/stack thread context.",
+    "sha256": "7919e525ed48f9de6f9376a4a780a0c3ae0aa4ff1c7e4a621bf5afbbae3e5d81"
   },
   "src/gpg_manager.h": {
     "date": "2026-10-12",

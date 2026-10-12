@@ -128,3 +128,23 @@ copyright-заголовки внутри файлов не удалены. Ис
 
 Игровые механики и изображения в этой итерации не заменялись. Host-object build
 не подтверждает ни сборку библиотек движка, ни линковку, ни Android ABI/runtime.
+
+
+## 2026-10-12 — проверенная Mac ARM64 подготовка
+
+- tools/native_host.py выбирает pinned Darwin Mach-O конвертеры, проверяет
+  Rosetta без установки/автопринятия лицензии и проверяет реальный --help.
+- Asset recipe сохраняет исходную графику, поддерживает Mac и отражает host
+  архитектуру в report; helper входит в input fingerprint.
+- Host C++ recipe использует native Apple SDK/OpenGL и ARM64 flags на Mac,
+  не загружает Linux Mesa header. Это не порт всей executable/link graph.
+- FlatBuffers include/flatbuffers/flatbuffers.h: явно default copy constructor
+  у TableKeyComparator, с прежней reference-copy семантикой. Причина — реальная
+  ошибка AppleClang 17 под Werror, обнаруженная Mac CI. Оригинальный blob,
+  pin и hash производного файла записаны в dependency-overrides.json.
+- Новый comparator test проверяет упорядочивание keyed reflection::Object.
+  Новый Mac CI проверяет подготовку в пути с пробелом, отдельный wrapper
+  публикует диагностику в check annotations без сокрытия exit code.
+
+Успешные реальные CI: macOS 38263311536, Linux/Java 38263311638.
+Пользовательский macOS 26.6.1, игровое окно и `.app` пока не проверены.

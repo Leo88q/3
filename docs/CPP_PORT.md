@@ -83,3 +83,13 @@ pindrop. `BENCHMARK_MOTIVE` не включён: активный NDK-профи
 Удалённый CI-рецепт дополнен host-C++ шагом, но его remote run не выполнялся.
 Новые механики Noriwake, MWA/cNFT и финальный licensing/release audit этим
 техническим этапом не закрываются.
+
+
+## Дополнение: macOS ARM64
+
+`check_native_cpp.py` теперь выбирает AppleClang на Mac, Apple SDK OpenGL headers
+и убирает SSE-флаги на arm64. Все 53 игровых translation units и два
+FlatBuffers-теста прошли [настоящий ARM64 Mac CI](https://github.com/Leo88q/3/actions/runs/38263311536).
+Результат по-прежнему object-only, не связанный исполняемый файл.
+Добавлен тест копирования/сортировки TableKeyComparator и минимальная
+upstream-поправка для AppleClang 17. Инструкция: [MAC_NATIVE.md](MAC_NATIVE.md).

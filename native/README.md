@@ -138,3 +138,12 @@ python3 tools/check_native_cpp.py --fetch
 Host-only Mesa GL header скачивается по точному Git blob ID, с сохранением MIT
 notice. Это **не NDK-компиляция, не линковка движка и не запуск игры**.
 Подробнее: [CPP_PORT.md](../docs/CPP_PORT.md).
+
+
+## macOS ARM64
+
+Ресурсы и игровые object files теперь проверены и на настоящем Mac в CI.
+Python/flatc/C++ работают в ARM64; оригинальные 64-bit Intel FBX-конвертеры
+работают через Rosetta. Не передаём ARM-компилятору `-msse4.1` и не используем
+Linux GL header на Mac. Инструкция и границы: [MAC_NATIVE.md](../docs/MAC_NATIVE.md).
+**Готового macOS-приложения и проверенного игрового окна пока нет.**
